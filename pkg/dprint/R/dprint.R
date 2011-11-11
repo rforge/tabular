@@ -1,0 +1,4 @@
+dprint <-
+function(...)
+  { dprint.table(...)}
+
