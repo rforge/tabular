@@ -1,3 +1,9 @@
+#' Insert Values Table Structure
+#'
+#' Dispatcher for insert.grp1. Inserts NA positions for tbl, label, and group structure from tbl.obj.
+#'
+#' @param tbl.obj
+#' @export
 insert.grp <-
 function(tbl.obj)
 {

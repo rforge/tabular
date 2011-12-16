@@ -1,3 +1,12 @@
+#' Formula Interface: Right Hand Side
+#'
+#' Parses Right hand side of formula
+#'
+#' @param f formula
+#' @param span There are two types of calls, when TRUE returns the spanning text, does not when FALSE
+#' @param Rnl 
+#' @param byvars
+#' @export
 fmla.rhs <-
 function(f,
                   span, # There are two types of calls, when TRUE returns the spanning text, does not when FALSE

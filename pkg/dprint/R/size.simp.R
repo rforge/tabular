@@ -1,3 +1,12 @@
+#' Size of Simple Table
+#'
+#' Measures size of properties of the simple table
+#'
+#' @param tbl.obj
+#' @param char.dim.obj
+#' @param pagelayout
+#' @param loc.y
+#' @export
 size.simp <-
 function(tbl.obj, char.dim.obj, pagelayout, loc.y)
 {

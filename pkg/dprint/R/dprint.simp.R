@@ -1,3 +1,13 @@
+#' Print Table to Graphics Device (dprint)
+#'
+#' drpint "simple table" class (to be implemented)
+#' 
+#' @param tbl.obj Simple Table object
+#' @param init Starting Position of Table
+#' @param style
+#' @param char.dim.obj
+#' @param size.simp.obj
+#' @export
 dprint.simp <-
 function(tbl.obj,          # Simple Table object
                         init = c(0, 6.9), # Starting Position of Table

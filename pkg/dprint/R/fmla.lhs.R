@@ -1,3 +1,12 @@
+#' Formula Interface: Left Hand Side
+#'
+#' Parses Left hand side of formula
+#'
+#' @param f formula
+#' @param grp
+#' @param lvl
+#' @param rhs.lpad
+#' @export
 fmla.lhs <-
 function(f, grp=NULL, lvl=NULL, rhs.lpad=FALSE) {
 

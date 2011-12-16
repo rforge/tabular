@@ -1,3 +1,11 @@
+#' Character Height
+#'
+#' Returns height in units(inches) based on a gpar setting
+#' 
+#' @param charact Table Object
+#' @param frmt format object
+#' @param cx shinkage parameter
+#' @export
 char.height <-
 function(charact = "A", frmt, cx=1)
 {

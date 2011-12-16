@@ -1,3 +1,10 @@
+#' Consecutive Structure
+#'
+#' Given a vector returns several objects describing how(if) consecutive elements appear.  
+#' This is a helper function for tbl.struct and is important in defining the column hierarchy.
+#' 
+#' @param vct vector
+#' @export
 consect.struct <-
 function(vct  # vector
                           )

@@ -1,3 +1,9 @@
+#' Column Names Line Break
+#'
+#' Inserts a line break in column names when the escape character [backslash] n is found.
+#' 
+#' @param colnames.obj column names object
+#' @export
 colnames.linebreak <-
 function(colnames.obj  # Column Names Object creatd by COLNAMES.STRUCT
                               )

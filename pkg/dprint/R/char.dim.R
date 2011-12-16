@@ -1,3 +1,11 @@
+#' Character Dimensions of Table
+#'
+#' Given the table object and style object, will return the maximum width of columns, the height of characters in the units specified by user
+#' 
+#' @param obj Table Object
+#' @param style style 
+#' @param cx charcter expansion
+#' @export
 char.dim <-
 function(obj,     # Table Object
                      style,

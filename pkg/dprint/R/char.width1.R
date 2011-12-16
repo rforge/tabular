@@ -1,3 +1,11 @@
+#' Character Width
+#'
+#' Returns the max width in units, given gpar settings
+#' 
+#' @param vctr vector
+#' @param frmt format object
+#' @param cx shinkage parameter
+#' @export
 char.width1 <-
 function(vctr, frmt, cx=1)
 {

@@ -1,3 +1,28 @@
+#' Style Sheet
+#'
+#' Control the mark up and formats for different sections of table
+#'
+#' @param frmt.bdy format settings for body of table
+#' @param frmt.col format settings for column heading of table
+#' @param frmt.colh Only used for borders around column spannin in hiearchy, "o" boxes entrie column, "_" puts line under hiarchy
+#' @param frmt.grp format settings for row group labels
+#' @param frmt.lbl format settings for row labels
+#' @param frmt.main format settings for table title
+#' @param frmt.tbl format settings for entire table, currently only for the box around entire table (Except table title)
+#' @param frmt.ftn format settings for footnote
+#' @param justify justification of text, applies to column heading and body
+#' @param indent number of characters ("A") to indent the labels underneath the grouping variable
+#' @param tbl.buf The space (vertical) between multiple tables
+#' @param cex character expansion
+#' @export
+#' @examples
+#' # My Style
+#' CBs <- style(frmt.bdy=frmt(fontfamily="HersheySans"), frmt.tbl=frmt(bty="o", lwd=1),
+#'             frmt.col=frmt(fontfamily="HersheySans", bg="khaki", fontface="bold", lwd=2, bty="_"),
+#'             frmt.grp=frmt(fontfamily="HersheySans",bg="khaki", fontface="bold"),
+#'             frmt.main=frmt(fontfamily="HersheySans", fontface="bold", fontsize=12),
+#'             frmt.ftn=frmt(fontfamily="HersheySans"),
+#'             justify="right")
 style <-
 function(frmt.bdy=NULL,
                   frmt.col=NULL,

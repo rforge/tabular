@@ -1,3 +1,12 @@
+#' Simulate Descriptives: Continuous
+#'
+#' Simulate a Data Frame containing descriptive statistics summarizing a continuous data
+#'
+#' @param n.grp number of row groups
+#' @param n.lvls number of rows in each row group
+#' @param n.grp2 another row grouping, such that grp is subset of grp2
+#' @param rnd boolean round results, data frame then returns as character
+#' @export
 rdesc <-
 function(n.grp = 8, n.lvls = 5, n.grp2=NULL, rnd=FALSE)
   {

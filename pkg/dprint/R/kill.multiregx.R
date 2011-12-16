@@ -1,3 +1,10 @@
+#' Kill Multiple Regular Expression
+#'
+#' Compacting some regular expression logic to remove regular expressions from vector
+#'
+#' @param string
+#' @param regx Perl Regular expression
+#' @export
 kill.multiregx <-
 function(string, # string
                            regx # Perl Regular expression

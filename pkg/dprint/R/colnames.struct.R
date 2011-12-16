@@ -1,3 +1,10 @@
+#' Column Names Structure
+#'
+#' Creates a structure for printing column names and their hierachies
+#' 
+#' @param col.names vector of strings (result of colnames(data.frame))
+#' @param linebreak boolean
+#' @export
 colnames.struct <-
 function(col.names, linebreak=TRUE)
 {

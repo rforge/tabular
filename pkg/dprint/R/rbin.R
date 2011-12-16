@@ -1,3 +1,11 @@
+#' Simulate Descriptives: Binomial
+#'
+#' Simulate a Data Frame containing descriptive statistics summarizing a binomial distribution
+#'
+#' @param n.grp number of row groups
+#' @param n.lvls number of rows in each row group
+#' @param n.grp2 another row grouping, such that grp is subset of grp2
+#' @export
 rbin <-
 function(n.grp = 8, n.lvls = 5, n.grp2=NULL)
   {

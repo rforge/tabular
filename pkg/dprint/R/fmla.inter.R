@@ -1,3 +1,12 @@
+#' Formula Interface Describing the Structure of Tabular Data
+#'
+#' Parse the left and right hand side of the formula.
+#'
+#' @param f formula
+#' @param data data.frmae
+#' @param regx remove regular expression from column name
+#' @param ...
+#' @export
 fmla.inter <-
 function(f, data=NULL, regx=NA, ...) {
   level       <- NULL  # Character, name of column containing row labels

@@ -1,3 +1,14 @@
+#' Insert Values
+#'
+#' Inserts a value into record in tbl.struct objects to control for when empty rows should be inserted into the data structure.  NA's will be suppressed during presentation of the table.
+#'
+#' @param obj vector or data frame
+#' @param dx Index where NA is to be inserted
+#' @param lblescp Label Escape, boolean
+#' @param group indicates that this object is related to the grouping vector and the insetions must go after
+#' @param val
+#' @param dx.up Bolean, If true adjust an index
+#' @export
 insert.grp1 <-
 function(obj,      # vector or data frame
                       dx,         # Index where NA is to be inserted

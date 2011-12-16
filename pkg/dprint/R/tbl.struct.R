@@ -1,3 +1,16 @@
+#' Table Structure
+#'
+#' Generalization of table structure
+#'
+#' @param fmla Formula interface to define table structure
+#' @param data data.frame
+#' @param label name of column containing row labels
+#' @param group name of column containing hieriarchy labels for the row names
+#' @param regx regular expression to be removed from original column names
+#' @param main Table title
+#' @param footnote footnote
+#' @param row.hl row highlight object see row.hl function
+#' @export
 tbl.struct <-
 function(fmla=NULL,    # Formula interface to define table structure
                        data,         # Input Data.frame

@@ -1,3 +1,13 @@
+#' Header
+#'
+#' Header
+#'
+#' @param txt1
+#' @param frmt1
+#' @param txt2
+#' @param frmt2
+#' @param pagelayout.obj
+#' @export
 hdr <-
 function(txt1,
                 frmt1=frmt(fontfamily="", fontface="bold", fontsize=20, col="blue", bty="_", lwd=2, linespace=1),

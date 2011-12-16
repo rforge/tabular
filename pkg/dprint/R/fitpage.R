@@ -1,3 +1,14 @@
+#' Fit Table to Page
+#'
+#' Calcuates character expansion to apply accross table presentation so that table fits within margins
+#'
+#' @param size.simp
+#' @param pagelayout
+#' @param fit.width
+#' @param fit.height
+#' @param fit
+#' @param cex.0 default cex
+#' @export
 fitpage <-
 function(size.simp,
                     pagelayout,

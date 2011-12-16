@@ -1,3 +1,9 @@
+#' Column Names Row
+#'
+#' Adjust index (reference number of rows above table for colnames) to account for line breaks
+#' 
+#' @param colnames.obj column names object
+#' @export
 colnames.row <-
 function(colnames.obj)
   {

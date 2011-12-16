@@ -1,3 +1,9 @@
+#' Print Summary Of lm object
+#'
+#' dprint lm class (to be implemented)
+#' 
+#' @param lm.obj lm object
+#' @export
 dprint.lm <-
 function(lm.obj)
 {

@@ -1,3 +1,11 @@
+#' Page Layout
+#'
+#' Page Layout
+#'
+#' @param dtype Device type, currently available "rgraphics", "portrait", "landscape"
+#' @param margins A numerical vector of the form c(bottom, left, top, right) which gives the margin size specified in inches.
+#' @param pg.dim If custom page dimensions define a vector of c(width, height) units
+#' @export
 pagelayout <-
 function(dtype="rgraphics", # Device type, currently available "rgraphics", "portrait", "landscape"
                        margins=NULL,   # A numerical vector of the form c(bottom, left, top, right) which gives the margin size specified in inches.

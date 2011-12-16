@@ -1,3 +1,14 @@
+#' Format Binomial
+#'
+#' Inline formula formatting of columns representing binomial summary statistics
+#' 
+#' @param prop column name representing a proportion
+#' @param r column name representing number of binomial events observed
+#' @param n column name representing number of observations
+#' @param digits.p digits for proportion presentation. see format
+#' @param nsmall.p nsmall for proportion presentation.
+#' @param digits.n number of digits for n presentation
+#' @export
 Fb <-
 function (prop=NULL, r=NULL, n=NULL, digits.p=4, nsmall.p=2, digits.n=6)
   {

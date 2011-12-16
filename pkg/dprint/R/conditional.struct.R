@@ -1,3 +1,10 @@
+#' Conditional Structure
+#'
+#' For variables defined as conditional variables in the formula, fuction to drive creating a list of simple table structures
+#' 
+#' @param data data.frame
+#' @param byvars variables in addition to the group and label variables listed in the formula
+#' @export
 conditional.struct <-
 function(data, byvars)
   {

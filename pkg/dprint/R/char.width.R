@@ -1,3 +1,11 @@
+#' Character Width
+#'
+#' Returns the max width of all the elements in a vector in units, handles data types.
+#' 
+#' @param obj Table Object
+#' @param frmt format object
+#' @param cx shinkage parameter
+#' @export
 char.width <-
 function(obj, frmt, cx=1)
 {

@@ -1,3 +1,11 @@
+#' Table Break
+#'
+#' Given an index, breaks table into multiple tables
+#'
+#' @param tbl.obj.l list of table objects
+#' @param cur.tbl Index to current table
+#' @param dx  Row to break table on
+#' @export
 tablebreak <-
 function(tbl.obj.l,  # list of table objects
                        cur.tbl,    # Index to current table

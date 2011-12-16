@@ -1,3 +1,14 @@
+#' Simple Table Structure
+#'
+#' Simple Table Structure
+#'
+#' @param data data.frame
+#' @param label name of column containing row labels
+#' @param group name of column containing hieriarchy labels for the row names
+#' @param main table title
+#' @param footnote foot note
+#' @param colnames.obj colnames object defined by colnames.struct
+#' @export
 tbl.struct.simp <-
 function(data, label = NULL, group = NULL, main=NA, footnote=NA, colnames.obj=NULL)
   {

@@ -1,3 +1,15 @@
+#' Footer
+#'
+#' Footer
+#'
+#' @param txt1
+#' @param frmt1
+#' @param page
+#' @param date
+#' @param pagelayout.obj
+#' @param pgtxt2
+#' @param pagenum
+#' @export
 ftr <-
 function(txt1,
                 frmt1=frmt(fontfamily="", fontface="plain", fontsize=8, col="black", linespace=.75),

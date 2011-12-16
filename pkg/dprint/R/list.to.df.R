@@ -1,3 +1,9 @@
+#' List to Data.frame
+#'
+#' Convert a list of vectors, of varying length, to a data frame. Elements are NA where lengths of vectors are smaller than the length of the largest vector.
+#'
+#' @param lst this is a list returned from string split
+#' @export
 list.to.df <-
 function(lst # this is a list returned from string split
                                   )

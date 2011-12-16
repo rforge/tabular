@@ -1,3 +1,9 @@
+#' Vector Structure
+#'
+#' Defines the structure of a vector given to footnote, main, etc.
+#'
+#' @param vctr character vector
+#' @export
 vector.struct <-
 function(vctr=NA)
 {
