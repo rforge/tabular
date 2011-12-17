@@ -1,0 +1,19 @@
+\name{rbin}
+\alias{rbin}
+\title{Simulate Descriptives: Binomial}
+\usage{
+  rbin(n.grp = 8, n.lvls = 5, n.grp2 = NULL)
+}
+\arguments{
+  \item{n.grp}{number of row groups}
+
+  \item{n.lvls}{number of rows in each row group}
+
+  \item{n.grp2}{another row grouping, such that grp is
+  subset of grp2}
+}
+\description{
+  Simulate a Data Frame containing descriptive statistics
+  summarizing a binomial distribution
+}
+
