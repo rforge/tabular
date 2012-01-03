@@ -2,10 +2,10 @@
 \alias{frmt}
 \title{Format of Table}
 \usage{
-  frmt(fontfamily = "", fontface = "plain", fontsize = 8,
-    text.all = TRUE, col = "black", bg = "white", buf = 3,
-    bty = "=", lwd = 1, lty = 1, lcol = "black",
-    linespace = 2)
+  frmt(fontfamily = NULL, fontface = NULL, fontsize = NULL,
+    text.all = FALSE, col = NULL, bg = NULL, buf = NULL,
+    bty = NULL, lwd = NULL, lty = NULL, lcol = NULL,
+    linespace = NULL)
 }
 \arguments{
   \item{fontfamily}{see gpar}
@@ -17,7 +17,8 @@
   \item{text.all}{If TRUE, when frmt.bdy is defined and
   nothing else, fontfamily, fontface, fontsize, col will be
   applied to frmt.col and frmt.row to avoid excessive
-  parameters}
+  parameters. Need to define some general rules - probably
+  not implemented correct at this time.}
 
   \item{col}{Color of text}
 

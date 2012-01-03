@@ -14,7 +14,7 @@
   table}
 
   \item{frmt.colh}{Only used for borders around column
-  spannin in hiearchy, "o" boxes entrie column, "_" puts
+  spanning in hiearchy, "o" boxes entrie column, "_" puts
   line under hiarchy}
 
   \item{frmt.grp}{format settings for row group labels}
@@ -44,8 +44,32 @@
   Control the mark up and formats for different sections of
   table
 }
+\note{
+  Defaults are listed below, unless section of table
+  overwrites with its own defaults:
+
+  fontfamily = "" fontface = "plain" fontsize = 8 col =
+  "black" bg = "white" buf = 3 bty = "X" (none) lwd = 1 lty
+  = 1 lcol="black" linespace = 2
+
+  Column heading: fontface="bold",bty="_", lwd=2
+
+  Column Spanning: bty="_",
+
+  Row Group: fontface="bold", bty="="
+
+  Entire table: bty="="
+
+  Table title (main): fontface="bold", fontsize=10,
+  linespace=1.5
+
+  Footnote: linespace=1.5
+}
 \examples{
 # My Style
+# Default, this is what is used in dprint if style parameter is not defined
+style()
+# Save style sheet formats in object to pass to multiple calls
 CBs <- style(frmt.bdy=frmt(fontfamily="HersheySans"), frmt.tbl=frmt(bty="o", lwd=1),
             frmt.col=frmt(fontfamily="HersheySans", bg="khaki", fontface="bold", lwd=2, bty="_"),
             frmt.grp=frmt(fontfamily="HersheySans",bg="khaki", fontface="bold"),
