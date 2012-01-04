@@ -165,7 +165,7 @@ dprint(fmla=f1, data=table1,margins=.2, main="Justify Left",  style=style(justif
 dev.off()
 
 h <- expression(hdr("Test Header", pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1, .5))))
-f <- expression(ftr("VNSNY:  The Center for Home Care\\n               Policy & Research", pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1.25, 1, 1.25,1))))
+f <- expression(ftr("R Package tabulaR", pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1.25, 1, 1.25,1)), pagenum=eval.parent(pagenum, 1)))
 x11()
 dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
             style=style(justify="left", frmt.tbl=frmt(bty="o"), frmt.bdy=frmt(linespace=1.5, bty="X")),
