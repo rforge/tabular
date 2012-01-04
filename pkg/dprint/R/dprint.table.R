@@ -105,7 +105,7 @@
 #' dev.off()
 #'
 #' h <- expression(hdr("Test Header", pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1, .5))))
-#' f <- expression(ftr("VNSNY:  The Center for Home Care\n               Policy & Research", pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1.25, 1, 1.25,1))))
+#' f <- expression(ftr("R Package tabulaR", pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1.25, 1, 1.25,1)), pagenum=eval.parent(pagenum, 1)))
 #' x11()
 #' dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
 #'             style=style(justify="left", frmt.tbl=frmt(bty="o"), frmt.bdy=frmt(linespace=1.5, bty="X")),
@@ -178,9 +178,12 @@ function(fmla=NULL,         # Formula interface to define table structure
         style.obj$cex <- fitpage.obj$cex.fit # Assign calculated cex fit, defaults to 1 or user defined
         cntrbuf.horz <- ifelse(center.horz|center, fitpage.obj$cntrbuf.horz, 0)
         cntrbuf.vert <- ifelse(center.vert|center, fitpage.obj$cntrbuf.vert, 0)
-        if (!is.null(f.hdr)){eval(f.hdr)}
-        if (!is.null(f.ftr)){eval(f.ftr)}
-        pagenum <- pagenum+1
+        if (is.null(lastcall)) # Assumption: first table on page places footnote and header.  If a sequential table is to be printed on the same page as the previous, do not add footer or iterate pagnum.
+         {
+          if (!is.null(f.hdr)){eval(f.hdr)}
+          if (!is.null(f.ftr)){eval(f.ftr)}
+          pagenum <- pagenum+1
+         }
       }
       # Insert the distance between tables after first table has been printed
       tbl.buf <- ifelse((tbl.i==1) & (is.null(lastcall)) , 0, style.obj$tbl.buf)
@@ -191,7 +194,6 @@ function(fmla=NULL,         # Formula interface to define table structure
       # Character dimensions for page and table layout calculations
       char.dim.obj  <- char.dim(tbl.obj, style=style.obj, cx=fitpage.obj$cex.fit)
       size.simp.obj <- size.simp(tbl.obj[[tbl.i]], char.dim.obj, pglay.obj, y.pos)
-
       if (newpage)
         {
           # If nothing in table fits than start a newpage
@@ -202,6 +204,9 @@ function(fmla=NULL,         # Formula interface to define table structure
               else { grid.newpage() }
               if (!is.null(f.hdr)){eval(f.hdr)}
               if (!is.null(f.ftr)){eval(f.ftr)}
+print(paste("page #", pagenum))
+pagenum <- pagenum + 1
+
               # Measure up page once again
               size.simp.obj <- size.simp(tbl.obj[[tbl.i]], char.dim.obj, pglay.obj, y.pos)
             }
