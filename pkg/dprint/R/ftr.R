@@ -1,8 +1,8 @@
 #' Footer
 #'
-#' Footer
+#' dprint is to be designed so that users can define custom functions to present footer on page.  This is the out of box footer.
 #'
-#' @param txt1 A vector of text to be places on bottom right of footer
+#' @param txt1 A vector of text to be placed on bottom right of footer
 #' @param frmt1 style sheet data type frmt for text on bottom left
 #' @param date  Boolean, should today's date be placed in bottom center of page
 #' @param pagelayout.obj Tells footer what type of page dprint is working with.  Has separate margins to allow for extra space between table presentation
