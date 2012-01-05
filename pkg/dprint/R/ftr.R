@@ -36,7 +36,26 @@
 #'          margins=1,
 #'          f.hdr=h, f.ftr=f
 #'          )
+#'  x <- rnorm(100)
+#'  y <- rnorm(100)
+#'  f2 <- expression(ftr("R Package tabulaR",
+#'                pagelayout.obj=pagelayout(dtype="landscape", margins=c(.5, .5))
+#'                , pagenum=dp$pagenum+1
+#'                ))
+#'  par(mai=c(2,3,2,3))
+#'  plot(x=c(0, 1), y=c(0,1), xlim=c(0,1), ylim=c(0,1),
+#'       type="n", xlab="", ylab="", xaxt="n", yaxt="n", bty="n")
+#'  plot(x,y, main="Scatter Plot X vs. Y")
+#'  eval(f2)
+#'  eval(h)
+#'  # ??? How to get this to work ???
+#'  par(mfcol=c(1,2), pty="s", bg="grey", mai=c(1,1,1,1))
+#'  plot(density(x), "Distribution of X", xlab="x", bg="blue")
+#'  plot(x,y, main="Scatter Plot X vs. Y")
+#'  eval(f2)
+#'  eval(h)
 #' dev.off()
+#'
 ftr <-
 function(txt1,
             frmt1=frmt(fontfamily="", fontface="plain", fontsize=8, col="black", linespace=.75),
