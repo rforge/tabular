@@ -9,7 +9,7 @@
     pgtxt2 = "page", pagenum = NULL)
 }
 \arguments{
-  \item{txt1}{A vector of text to be places on bottom right
+  \item{txt1}{A vector of text to be placed on bottom right
   of footer}
 
   \item{frmt1}{style sheet data type frmt for text on
@@ -31,7 +31,9 @@
   get to work ~ carlin}
 }
 \description{
-  Footer
+  dprint is to be designed so that users can define custom
+  functions to present footer on page.  This is the out of
+  box footer.
 }
 \examples{
 longtable1 <- rdesc(15, 7)
@@ -59,6 +61,24 @@ pdf("longtable1.pdf", height=8.5, width=11)
          margins=1,
          f.hdr=h, f.ftr=f
          )
+ x <- rnorm(100)
+ y <- rnorm(100)
+ f2 <- expression(ftr("R Package tabulaR",
+               pagelayout.obj=pagelayout(dtype="landscape", margins=c(.5, .5))
+               , pagenum=dp$pagenum+1
+               ))
+ par(mai=c(2,3,2,3))
+ plot(x=c(0, 1), y=c(0,1), xlim=c(0,1), ylim=c(0,1),
+      type="n", xlab="", ylab="", xaxt="n", yaxt="n", bty="n")
+ plot(x,y, main="Scatter Plot X vs. Y")
+ eval(f2)
+ eval(h)
+ # ??? How to get this to work ???
+ par(mfcol=c(1,2), pty="s", bg="grey", mai=c(1,1,1,1))
+ plot(density(x), "Distribution of X", xlab="x", bg="blue")
+ plot(x,y, main="Scatter Plot X vs. Y")
+ eval(f2)
+ eval(h)
 dev.off()
 }
 
