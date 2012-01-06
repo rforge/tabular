@@ -52,7 +52,7 @@ function(fmla=NULL,    # Formula interface to define table structure
            for (uniq.concat.cond.i in 1:l.uniq.concat.cond)
             {
                cur.fltr.dx <- which(conditional.obj$concat.cond == conditional.obj$uniq.concat.cond[uniq.concat.cond.i])
-               data.i <- data[cur.fltr.dx, ]
+               data.i <- data[cur.fltr.dx, ,drop=FALSE]
                if (!is.data.frame(data.i)) {data.i <- as.data.frame(data.i)} # Class change on subsetting nx1 data frame
                tbl.obj[[uniq.concat.cond.i]] <- tbl.struct.simp(data=data.i, label = fmla.obj$label, group = fmla.obj$group, main=main, footnote=footnote, colnames.obj=fmla.obj$colnames.obj)
                tbl.obj[[uniq.concat.cond.i]]$cond.txt <- conditional.obj$uniq.concat.cond[uniq.concat.cond.i]
