@@ -9,9 +9,7 @@ has_devel()
 load_all("dprint")
 
 check("dprint")
-
 check_doc("dprint")
-
 run_examples("dprint")
 
 build(pkg = "dprint",
