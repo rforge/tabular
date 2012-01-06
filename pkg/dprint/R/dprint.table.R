@@ -13,7 +13,7 @@
 #' @param main table title
 #' @param footnote footnote
 #' @param dtype Graphics device type referred to by names, sets default page settings.Device type, currently available "rdevice", "portrait", "landscape"
-#' @param pg.dim If custom page dimensions define a vector of c(width, height) units. Custom page dimensions over ride dtype
+#' @param pg.dim If custom page dimensions define a vector of c(width, height) units. Custom page dimensions over ride dtype.  When printing to a multiple page pdf with custom dimensions, dtype should be set to some character other than "redevice" (i.e. "custom") because x11() will be used to start a new window instead of grid.text()
 #' @param margins A numerical vector of the form c(bottom, left, top, right) which gives the margin size specified in inches. Other forms include a constant for all margins and c(top/bottom,left/right)
 #' @param showmargins Display margins on page in red. Usefull for tinkering with presentation
 #' @param row.hl row hightlight object. Conditional highlight; row.hl(dx=, col=)
@@ -204,9 +204,7 @@ function(fmla=NULL,         # Formula interface to define table structure
               else { grid.newpage() }
               if (!is.null(f.hdr)){eval(f.hdr)}
               if (!is.null(f.ftr)){eval(f.ftr)}
-print(paste("page #", pagenum))
-pagenum <- pagenum + 1
-
+              pagenum <- pagenum + 1
               # Measure up page once again
               size.simp.obj <- size.simp(tbl.obj[[tbl.i]], char.dim.obj, pglay.obj, y.pos)
             }

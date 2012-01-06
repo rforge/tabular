@@ -62,8 +62,8 @@ function(tbl.obj.l,  # list of table objects
     { DD <- 'A'
       # [[!!!insert code here!!!]]
     }
-  tbl.obj1[[1]]$bdy <-  tbl.obj.l[[cur.tbl]]$bdy[dx1, ]
-  tbl.obj2[[1]]$bdy <-  tbl.obj.l[[cur.tbl]]$bdy[dx2, ]
+  tbl.obj1[[1]]$bdy <-  tbl.obj.l[[cur.tbl]]$bdy[dx1, ,drop=FALSE]
+  tbl.obj2[[1]]$bdy <-  tbl.obj.l[[cur.tbl]]$bdy[dx2, ,drop=FALSE]
   if (!is.null(tbl.obj.l[[cur.tbl]]$row.hl$dx) )
     {
        tbl.obj1[[1]]$row.hl$dx <-  tbl.obj.l[[cur.tbl]]$row.hl$dx[tbl.obj.l[[cur.tbl]]$row.hl$dx <= dx]
@@ -75,8 +75,8 @@ function(tbl.obj.l,  # list of table objects
   ## Reconstruct List of Table objects ##
   if (length(tbl.obj.l)==1)              {tbl.obj.l <- c(tbl.obj1, tbl.obj2)}
   else if (cur.tbl == 1)                 {tbl.obj.l <- c(tbl.obj1, tbl.obj2, tbl.obj.l[2:length(tbl.obj.l)])}
-  else if (cur.tbl == length(tbl.obj.l)) {tbl.obj.l <- c(tbl.obj.l[1:(cur.tbl-1)], tbl.obj1, tbl.obj2)}
-  else                                   {tbl.obj.l <- c(tbl.obj.l[1:(cur.tbl-1)], tbl.obj1, tbl.obj2, tbl.obj.l[(cut.tbl+1):(length(tbl.obj.l))])}
+  else if (cur.tbl == length(tbl.obj.l)) {tbl.obj.l <- c(tbl.obj.l[1:(cur.tbl-1)], tbl.obj1, tbl.obj2)}          # 1/06/2011 changed from cut.tbl to cur.tbl ???
+  else                                   {tbl.obj.l <- c(tbl.obj.l[1:(cur.tbl-1)], tbl.obj1, tbl.obj2, tbl.obj.l[(cur.tbl+1):(length(tbl.obj.l))])}
  return(tbl.obj.l)
 }
 
