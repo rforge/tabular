@@ -43,8 +43,6 @@
 #'                , pagenum=dp$pagenum+1
 #'                ))
 #'  par(mai=c(2,3,2,3))
-#'  plot(x=c(0, 1), y=c(0,1), xlim=c(0,1), ylim=c(0,1),
-#'       type="n", xlab="", ylab="", xaxt="n", yaxt="n", bty="n")
 #'  plot(x,y, main="Scatter Plot X vs. Y")
 #'  eval(f2)
 #'  eval(h)
