@@ -37,7 +37,10 @@
 
   \item{pg.dim}{If custom page dimensions define a vector
   of c(width, height) units. Custom page dimensions over
-  ride dtype}
+  ride dtype.  When printing to a multiple page pdf with
+  custom dimensions, dtype should be set to some character
+  other than "redevice" (i.e. "custom") because x11() will
+  be used to start a new window instead of grid.text()}
 
   \item{margins}{A numerical vector of the form c(bottom,
   left, top, right) which gives the margin size specified
