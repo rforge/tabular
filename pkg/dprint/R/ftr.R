@@ -65,6 +65,13 @@ function(txt1,
 {
 
   txt1.struct <- vector.struct(txt1)
+  # Defaults
+  if (is.null(frmt1$fontfamily)) {frmt1$fontfamily=""}
+  if (is.null(frmt1$fontface))   {frmt1$fontface="plain"}
+  if (is.null(frmt1$fontsize))   {frmt1$fontsize=8}
+  if (is.null(frmt1$col))        {frmt1$col="black"}
+  if (is.null(frmt1$linespace))  {frmt1$linespace=.75}
+   
   # Calculate character height and
   ch1  <- char.height("A", frmt=frmt1, cx=1)
   linespace1  <- frmt1$linespace*ch1
