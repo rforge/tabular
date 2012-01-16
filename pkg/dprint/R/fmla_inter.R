@@ -169,7 +169,6 @@ function(f, data=NULL, regx=NA, ...) {
 
   rhs.obj      <- fmla.rhs(rhs, span=FALSE) # Removes spanning from formula
   rhs.obj.span <- fmla.rhs(rhs, span=TRUE)  # Keeps spanning in
-
   # Exception for when all variables are used
   rhs      = rhs.obj$rl
   rhs.span = rhs.obj.span$rl
@@ -187,7 +186,6 @@ function(f, data=NULL, regx=NA, ...) {
     fmla      = as.call(list(as.symbol("~"), rhs))
     fmla.span = as.call(list(as.symbol("~"), rhs.span))
   }
-
   fmla.span     <- as.formula(fmla.span)
   fmla          <- as.formula(fmla)
   ### Column Hiearchy ###
@@ -218,6 +216,7 @@ function(f, data=NULL, regx=NA, ...) {
   if (!is.na(regx)) {colnames.obj$cname <- kill.multiregx(colnames.obj$cname, regx=regx)}
   # Use model.frame to apply embedded functions
   trms.cn <- attr(terms(fmla, data=data), "term.labels")
+  trms.cn <- kill.multiregx(trms.cn, "`") #Kill Squote added by terms.  01/16/2011~CB
   data=model.frame(fmla, data)
   # Drops variables from data frame when "-" was used
   cn.dx <- which(colnames(data) %in% c(grp, trms.cn))
