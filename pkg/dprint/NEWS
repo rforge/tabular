@@ -1,0 +1,15 @@
+
+dprint 0.0.3
+--------------
+
+CREDIT
+
+* gave credit to Rocco for formula interface
+
+RENAME Functions
+
+* From `fmla.lhs` to `fmla_lhs`
+
+* From `fmla.rhs` to `fmla_rhs`
+
+* From `fmla.inter` to `fmla_inter`
