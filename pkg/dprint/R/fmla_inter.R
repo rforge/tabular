@@ -6,8 +6,9 @@
 #' @param grp
 #' @param lvl
 #' @param rhs.lpad
+#' @author Rocco Napoli
 #' @export
-fmla.lhs <-
+fmla_lhs <-
 function(f, grp=NULL, lvl=NULL, rhs.lpad=FALSE) {
 
   fl = as.list(f)
@@ -29,7 +30,7 @@ function(f, grp=NULL, lvl=NULL, rhs.lpad=FALSE) {
     }
     if (i > 1) {
       if (typeof(tm) == "language")
-           {rl[[i]] = fmla.lhs(tm)
+           {rl[[i]] = fmla_lhs(tm)
            }
       else #group or level
            if (tm == lvl) lvl.found = TRUE
@@ -50,8 +51,9 @@ function(f, grp=NULL, lvl=NULL, rhs.lpad=FALSE) {
 #' @param span There are two types of calls, when TRUE returns the spanning text, does not when FALSE
 #' @param Rnl 
 #' @param byvars
+#' @author Rocco Napoli
 #' @export
-fmla.rhs <-
+fmla_rhs <-
 function(f,
                   span, # There are two types of calls, when TRUE returns the spanning text, does not when FALSE
                   Rnl=list(Rn.o=list(), Rn.n=NULL, rn.i=0),
@@ -101,7 +103,7 @@ function(f,
         { # If elements of formula are still functinos call again
           if (typeof(tm) == "language")
            {
-             rhs.obj <-  fmla.rhs(tm, span=span, Rnl=Rnl, byvars=byvars)
+             rhs.obj <-  fmla_rhs(tm, span=span, Rnl=Rnl, byvars=byvars)
              rl <- c(rl, rhs.obj$rl)
              Rnl = rhs.obj$Rnl
              byvars = rhs.obj$byvars
@@ -133,8 +135,9 @@ function(f,
 #' @param data data.frmae
 #' @param regx remove regular expression from column name
 #' @param ...
+#' @author Rocco Napoli
 #' @export
-fmla.inter <-
+fmla_inter <-
 function(f, data=NULL, regx=NA, ...) {
   level       <- NULL  # Character, name of column containing row labels
   group       <- NULL  # first level grouping
@@ -167,8 +170,8 @@ function(f, data=NULL, regx=NA, ...) {
     lvl = all.vars(lhs)[2]
   }
 
-  rhs.obj      <- fmla.rhs(rhs, span=FALSE) # Removes spanning from formula
-  rhs.obj.span <- fmla.rhs(rhs, span=TRUE)  # Keeps spanning in
+  rhs.obj      <- fmla_rhs(rhs, span=FALSE) # Removes spanning from formula
+  rhs.obj.span <- fmla_rhs(rhs, span=TRUE)  # Keeps spanning in
   # Exception for when all variables are used
   rhs      = rhs.obj$rl
   rhs.span = rhs.obj.span$rl
@@ -177,7 +180,7 @@ function(f, data=NULL, regx=NA, ...) {
 
   if (!is.null(lhs))
   {
-    lhs = fmla.lhs(lhs, grp, lvl, rhs.lpad)
+    lhs = fmla_lhs(lhs, grp, lvl, rhs.lpad)
     fmla      = as.call(list(as.symbol("~"), lhs, rhs))
     fmla.span = as.call(list(as.symbol("~"), lhs, rhs.span))
   }

@@ -33,7 +33,7 @@ function(fmla=NULL,    # Formula interface to define table structure
   ### Formula Interface ###
   else
     {
-      fmla.obj   <- fmla.inter(fmla, data=data, regx=regx)
+      fmla.obj   <- fmla_inter(fmla, data=data, regx=regx)
       # If no conidionalt variables than simple table structure
       if (is.null(fmla.obj$byvars1))
         {
