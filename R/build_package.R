@@ -5,7 +5,7 @@ library(devtools)
 library(testthat)
 library(roxygen2)
 has_devel()
-
+show_news("dprint")
 load_all("dprint")
 
 check("dprint")
