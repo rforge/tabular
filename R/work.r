@@ -4,7 +4,6 @@
 source("dprint.r")
 
 
-
 # ============== #
 #       RDESC    #
 # ============== #
@@ -24,52 +23,52 @@ table3 <- rbind(table2a, table2b)
 # ===================== #
 #   FORMULA INTERFACE   #
 # ===================== #
-fmla.inter(~., table1)            # print everything in data frame
-fmla.inter(level~., table1)       # level and everything
-fmla.inter(group+level~., table1) # row dimensions exist identfied by group & level,  and everything else is printed
-fmla.inter(~Mean1 + Median1 + Variance1, table1) # No group or level + subset of fields on the right
-fmla.inter(group+.~ Mean1 + Median1 + Variance1, table1)     #group, but no level, and subet of fields on right
-fmla.inter(group+level~ Mean1+Median1, table1)
-fmla.inter(group+level~ Mean1 + Median1 + Variance1, table1) # group and level, and subset of fields on right
+fmla_inter(~., table1)            # print everything in data frame
+fmla_inter(level~., table1)       # level and everything
+fmla_inter(group+level~., table1) # row dimensions exist identfied by group & level,  and everything else is printed
+fmla_inter(~Mean1 + Median1 + Variance1, table1) # No group or level + subset of fields on the right
+fmla_inter(group+.~ Mean1 + Median1 + Variance1, table1)     #group, but no level, and subet of fields on right
+fmla_inter(group+level~ Mean1+Median1, table1)
+fmla_inter(group+level~ Mean1 + Median1 + Variance1, table1) # group and level, and subset of fields on right
 
 ### Spanning ###
-fmla.inter(group+level~ Control:(Mean1 + Median1 + Variance1), table1) # group level, and apply Control as hierachy to fields on right
-fmla.inter(group+level~ Control:(Mean1 + Median1 + Variance1) + Treatment:(Mean2 + Median2 + Variance2) + p.value, table1) # group level, and apply control and treatments to hierchaies on right
-fmla.inter(group+level~ Control:(Mean1 + Median1 + Variance1) + Treatment:(Mean2 + Median2 + Variance2) + p.value, table1) # group level, and apply control and treatments to hierchaies on right
+fmla_inter(group+level~ Control:(Mean1 + Median1 + Variance1), table1) # group level, and apply Control as hierachy to fields on right
+fmla_inter(group+level~ Control:(Mean1 + Median1 + Variance1) + Treatment:(Mean2 + Median2 + Variance2) + p.value, table1) # group level, and apply control and treatments to hierchaies on right
+fmla_inter(group+level~ Control:(Mean1 + Median1 + Variance1) + Treatment:(Mean2 + Median2 + Variance2) + p.value, table1) # group level, and apply control and treatments to hierchaies on right
 # Illegal name for formula, and use regualr expression to take of text.  This will be useful to prevent erros when tie brekers
-fmla.inter(group+level~ `This is a Control`:(Mean1 + Median1 + Variance1) + Treatment.y:(Mean2 + Median2 + Variance2), table1, regx="1|2|.y")
-fmla.inter(group+level~.-p.value, table1) # all on rhs with exception of p.value
+fmla_inter(group+level~ `This is a Control`:(Mean1 + Median1 + Variance1) + Treatment.y:(Mean2 + Median2 + Variance2), table1, regx="1|2|.y")
+fmla_inter(group+level~.-p.value, table1) # all on rhs with exception of p.value
 
-fmla.inter(~.-p.value, table1)   # Columns but p.value
+fmla_inter(~.-p.value, table1)   # Columns but p.value
 
 ### Condition logic ###
 # Condition on group2
-fmla.inter(group+level~ Mean1 + Median1 + Variance1|group2, table2)
+fmla_inter(group+level~ Mean1 + Median1 + Variance1|group2, table2)
 # Condition on group2 and group3
-fmla.inter(group+level~ Mean1 + Median1 + Variance1|group3+group2, table3)
+fmla_inter(group+level~ Mean1 + Median1 + Variance1|group3+group2, table3)
 # Condition on group2 down, and group3 accross page (not yet implemented in presentation)
-fmla.inter(group+level~ Mean1 + Median1 + Variance1|group2|group3, table3)
-fmla.inter(group+level~ Mean1 + Median1 + Variance1|.|group3, table3) # Just across
+fmla_inter(group+level~ Mean1 + Median1 + Variance1|group2|group3, table3)
+fmla_inter(group+level~ Mean1 + Median1 + Variance1|.|group3, table3) # Just across
 
-fmla.inter(level~.|group2, table2)
-fmla.inter(~.|group2, table2)
-fmla.inter(group+.~.|group2, table2)
-fmla.inter(group+.~.|.|group3, table3)
-fmla.inter(group+level~.|group2, table2)
-fmla.inter(group+level~x:(Mean1+Median1)+y:(Mean2+Median2)|group2, table2)
+fmla_inter(level~.|group2, table2)
+fmla_inter(~.|group2, table2)
+fmla_inter(group+.~.|group2, table2)
+fmla_inter(group+.~.|.|group3, table3)
+fmla_inter(group+level~.|group2, table2)
+fmla_inter(group+level~x:(Mean1+Median1)+y:(Mean2+Median2)|group2, table2)
 
 ### Rename and other imbedded functions ##
-fmla.inter(group+level~Rn(round(Mean1, 2), "Mean Trt")+Variance1, table1)
-fmla.inter(group+level~Rn(round(Mean1, 2), "Mean Trt")+Variance1+Rn(round(I((Mean1+Mean2)/2),2), "Average of Averages"), table1)
-fmla.inter(group+level~Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)"), table1)
+fmla_inter(group+level~Rn(round(Mean1, 2), "Mean Trt")+Variance1, table1)
+fmla_inter(group+level~Rn(round(Mean1, 2), "Mean Trt")+Variance1+Rn(round(I((Mean1+Mean2)/2),2), "Average of Averages"), table1)
+fmla_inter(group+level~Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)"), table1)
 # Spanning + Embedded
-fmla.inter(group~Treatment:Rn(round(Mean1, 2), "Mean Trt"), table1)
-fmla.inter(group~Treatment:Rn(round(Mean1, 2), "Mean Trt")+Variance1, table1)
-fmla.inter(group+level~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)"), table1)
-fmla.inter(group+level~Control:(Mean1 + Median1 + Variance1), table1)
-fmla.inter(group+level~Rn(round(Mean1, 2), "Mean Trt")+Variance1, table1)
-fmla.inter(group+level~Rn(round(Mean1, 2), "Mean\nTrt")+Variance1, table1)
-fmla.inter(group+level~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)")|group2, table2)
+fmla_inter(group~Treatment:Rn(round(Mean1, 2), "Mean Trt"), table1)
+fmla_inter(group~Treatment:Rn(round(Mean1, 2), "Mean Trt")+Variance1, table1)
+fmla_inter(group+level~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)"), table1)
+fmla_inter(group+level~Control:(Mean1 + Median1 + Variance1), table1)
+fmla_inter(group+level~Rn(round(Mean1, 2), "Mean Trt")+Variance1, table1)
+fmla_inter(group+level~Rn(round(Mean1, 2), "Mean\nTrt")+Variance1, table1)
+fmla_inter(group+level~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)")|group2, table2)
 
 
 # =================== #
