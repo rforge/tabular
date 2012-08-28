@@ -10,4 +10,10 @@
 \description{
   drpint method (to be implemented)
 }
+\author{
+  Carlin Brickner
+}
+\seealso{
+  For now see \code{\link{dprint.table}}
+}
 

@@ -29,7 +29,7 @@ function(tbl.obj,          # Simple Table object
   # --------------------------- #
   if (!is.na(tbl.obj$main.nrw))
     { # If there is conditinal text, append it to the last position of main vector
-      if (!is.null(tbl.obj$cond.txt)) {tbl.obj$main[tbl.obj$main.nrw] <- paste(tbl.obj$main[tbl.obj$main.nrw], tbl.obj$cond.txt, sep=": ")}
+      if (!is.null(tbl.obj$cond.txt)) {tbl.obj$main[tbl.obj$main.nrw] <- paste(tbl.obj$main[tbl.obj$main.nrw], tbl.obj$cond.txt, sep="")}
       for (main.dx in 1:tbl.obj$main.nrw)
         {#                                                              a little extra space for lines background
           y.loc <- y.rem - char.dim.obj$linespace.main*(main.dx-.5) + .25*char.dim.obj$linespace.col

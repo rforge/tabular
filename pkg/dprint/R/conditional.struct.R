@@ -10,7 +10,8 @@ function(data, byvars)
   {
     cnms <- colnames(data)[!colnames(data) %in% byvars]
     if (length(byvars)==1)
-      { concat.cond <- paste(rep(byvars, ncol(data)), data[,byvars], sep="=")}
+      { concat.cond <- data[,byvars] # paste(rep(byvars, ncol(data)), data[,byvars], sep="=")
+        }
     else
       {
         l <- vector("list", length(byvars))

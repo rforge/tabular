@@ -55,6 +55,7 @@ fmla_inter(~.|group2, table2)
 fmla_inter(group+.~.|group2, table2)
 fmla_inter(group+.~.|.|group3, table3)
 fmla_inter(group+level~.|group2, table2)
+
 fmla_inter(group+level~x:(Mean1+Median1)+y:(Mean2+Median2)|group2, table2)
 
 ### Rename and other imbedded functions ##
@@ -69,6 +70,7 @@ fmla_inter(group+level~Control:(Mean1 + Median1 + Variance1), table1)
 fmla_inter(group+level~Rn(round(Mean1, 2), "Mean Trt")+Variance1, table1)
 fmla_inter(group+level~Rn(round(Mean1, 2), "Mean\nTrt")+Variance1, table1)
 fmla_inter(group+level~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)")|group2, table2)
+
 
 
 # =================== #
@@ -152,6 +154,22 @@ dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=T, main="Tab
 dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=T, main="Table Left",
              style=CBs,
              f.hdr = h, f.ftr=f, pagenum=1)
+
+
+by_var_f1 <- level~Mean1+Median1|group
+by_var_f2 <- level~Mean1+Median1|group+group2
+fmla_inter(f1, data=table2)
+tbl.struct(fmla=f1, data=table2, label=NULL, group=NULL, regx=NA, main=" A", footnote=NA, row.hl=NULL)
+conditional.struct(table2, c("group2"))
+conditional.struct(table2, c("group", "group2"))
+# If main is default (null) than do not print titles
+dprint(fmla=by_var_f1, data=table2)
+# WHen title is defined, and only one conditional variable is defined, just print the values concatenated to the text
+dprint(fmla=by_var_f1, data=table2,main=" ")
+# When more than one conditional variable, concatenate the variable name and the current combination of values
+dprint(fmla=by_var_f2, data=table2,main="Descriptives for: ")
+
+
 # -------------------------------------------------------------------------------------------------------#
 # Below here is old
 # VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV #

@@ -4,6 +4,9 @@
 #' 
 #' @param ... see dprint.table
 #' @export
+#' @seealso For now  see \code{\link{dprint.table}}
+#' 
+#' @author Carlin Brickner
 dprint <-
 function(...)
   { dprint.table(...)}

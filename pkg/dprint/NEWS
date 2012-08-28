@@ -1,4 +1,13 @@
 
+dprint 0.0.4
+--------------
+
+ASSUMPTIONS
+
+* WHen title is defined, and only one conditional variable is defined, just print the values concatenated to the text
+
+*  When more than one conditional variable, concatenate the variable name and the current combination of values (same as before)
+
 dprint 0.0.3
 --------------
 

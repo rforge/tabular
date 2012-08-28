@@ -116,7 +116,20 @@
 #' dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
 #'             style=CBs,
 #'             f.hdr = h, f.ftr=f, pagenum=1)
-# @author Carlin Brickner
+#' x11()
+#' by_var_f1 <- level~Mean1+Median1|group
+#' by_var_f2 <- level~Mean1+Median1|group+group2
+#' # If main is default (null) than do not print titles
+#' dprint(fmla=by_var_f1, data=table2)
+#' dev.off()
+#' x11()
+#' # WHen title is defined, and only one conditional variable is defined, just print the values concatenated to the text
+#' dprint(fmla=by_var_f1, data=table2,main=" ")
+#' dev.off()
+#' x11()
+#' # When more than one conditional variable, concatenate the variable name and the current combination of values
+#' dprint(fmla=by_var_f2, data=table2,main="Descriptives for: ")             
+#' @author Carlin Brickner
 dprint.table <-
 function(fmla=NULL,         # Formula interface to define table structure
          data,              # Input Data.frame
