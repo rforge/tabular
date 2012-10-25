@@ -3,10 +3,12 @@ dprint 0.0.4
 --------------
 
 ASSUMPTIONS
+* When title is defined, and only one conditional variable is defined, just print the values concatenated to the text
+* When more than one conditional variable, concatenate the variable name and the current combination of values (same as before)
 
-* WHen title is defined, and only one conditional variable is defined, just print the values concatenated to the text
-
-*  When more than one conditional variable, concatenate the variable name and the current combination of values (same as before)
+BUGS
+* Fixed bug when using row highlighting feature.  The logic that accounts for row grouping was referring to the wrong index (insert.grp1)
+* Corrected location of row highlight
 
 dprint 0.0.3
 --------------
