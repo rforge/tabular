@@ -47,7 +47,8 @@ function(tbl.obj,          # Simple Table object
   # Must be before any text or borders for correct effect
   for (y.dx in 1:tbl.obj$nrw)
     { #
-      y.loc <-  y.rem - char.dim.obj$linespace.col*tbl.obj$nrw.colhead - char.dim.obj$linespace.bdy*y.dx
+      #y.loc <-  y.rem - char.dim.obj$linespace.col*tbl.obj$nrw.colhead - char.dim.obj$linespace.bdy*y.dx
+      y.loc <-  y.rem - char.dim.obj$linespace.col*(tbl.obj$nrw.colhead + .25) - char.dim.obj$linespace.bdy*y.dx
       if (!is.null(row.hl))
         {  if (y.dx %in% tbl.obj$row.hl$dx)
             { grid.rect(x = unit(init[1],"inches"), y = unit(y.loc, "inches"),
