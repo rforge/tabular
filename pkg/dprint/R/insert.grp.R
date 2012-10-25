@@ -11,11 +11,11 @@
 #' @export
 insert.grp1 <-
 function(obj,      # vector or data frame
-                      dx,         # Index where NA is to be inserted
-                      lblescp,    # Label Escape, boolean
-                      group=F,  # indicates that this object is related to the grouping vector and the insetions must go after
-                      val=NA,
-                      dx.up =FALSE # If true adjust an index
+          dx,         # Index where NA is to be inserted
+          lblescp,    # Label Escape, boolean
+          group=FALSE,  # indicates that this object is related to the grouping vector and the insetions must go after
+          val=NA,
+          dx.up =FALSE # If true adjust an index
 )
 {
   # This section handles data frames
@@ -41,7 +41,7 @@ function(obj,      # vector or data frame
     { obj2 <- obj
       for (dx.i in 1:length(dx))
         {
-          if (!lblescp[i])
+          if (!lblescp[dx.i])
             {          obj2[obj>=dx[dx.i]] <- obj2[obj>=dx[dx.i]] +1}
         }
       obj<-obj2
@@ -52,7 +52,7 @@ function(obj,      # vector or data frame
       if (!group)
         {
           for (i in 1:length(dx))
-            {
+            { 
               if (!lblescp[i])
                {
                   if(i==1) {obj <- c(val, obj)}
