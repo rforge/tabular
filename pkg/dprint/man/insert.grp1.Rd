@@ -2,7 +2,7 @@
 \alias{insert.grp1}
 \title{Insert Values}
 \usage{
-  insert.grp1(obj, dx, lblescp, group = F, val = NA,
+  insert.grp1(obj, dx, lblescp, group = FALSE, val = NA,
     dx.up = FALSE)
 }
 \arguments{
