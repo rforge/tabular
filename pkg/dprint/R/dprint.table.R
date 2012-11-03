@@ -208,25 +208,25 @@ function(fmla=NULL,         # Formula interface to define table structure
       char.dim.obj  <- char.dim(tbl.obj, style=style.obj, cx=fitpage.obj$cex.fit)
       size.simp.obj <- size.simp(tbl.obj[[tbl.i]], char.dim.obj, pglay.obj, y.pos)
       if (newpage)
+      {
+        # If nothing in table fits than start a newpage
+        if (size.simp.obj$nothingfits)
         {
-          # If nothing in table fits than start a newpage
-          if (size.simp.obj$nothingfits)
-            {
-              y.pos <- pglay.obj$cord.tl[2] # Reset y.pos to the top of the page
-              if (dtype %in% c("rgraphics")) { x11() }
-              else { grid.newpage() }
-              if (!is.null(f.hdr)){eval(f.hdr)}
-              if (!is.null(f.ftr)){eval(f.ftr)}
-              pagenum <- pagenum + 1
-              # Measure up page once again
-              size.simp.obj <- size.simp(tbl.obj[[tbl.i]], char.dim.obj, pglay.obj, y.pos)
-            }
-          if (!is.null(size.simp.obj$tablebreak.dx)) # Break the table on the last line or group that fits on the page and continue
-            {tbl.obj <- tablebreak(tbl.obj, tbl.i, size.simp.obj$tablebreak.dx);
-             # Measure up page once again, after breaking up the current table
-             size.simp.obj <- size.simp(tbl.obj[[tbl.i]], char.dim.obj, pglay.obj, y.pos)
-            }
+          y.pos <- pglay.obj$cord.tl[2] # Reset y.pos to the top of the page
+          if (dtype %in% c("rgraphics")) { x11() }
+          else { grid.newpage() }
+          if (!is.null(f.hdr)){eval(f.hdr)}
+          if (!is.null(f.ftr)){eval(f.ftr)}
+          pagenum <- pagenum + 1
+          # Measure up page once again
+          size.simp.obj <- size.simp(tbl.obj[[tbl.i]], char.dim.obj, pglay.obj, y.pos)
         }
+        if (!is.null(size.simp.obj$tablebreak.dx)) # Break the table on the last line or group that fits on the page and continue
+        {tbl.obj <- tablebreak(tbl.obj, tbl.i, size.simp.obj$tablebreak.dx);
+         # Measure up page once again, after breaking up the current table
+         size.simp.obj <- size.simp(tbl.obj[[tbl.i]], char.dim.obj, pglay.obj, y.pos)
+        }
+      }
       d <- dprint.simp(tbl.obj[[tbl.i]], init=c(x.pos, y.pos),
                        style=style.obj, char.dim.obj=char.dim.obj, size.simp.obj=size.simp.obj)
 
