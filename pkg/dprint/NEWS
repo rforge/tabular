@@ -9,7 +9,8 @@ ASSUMPTIONS
 BUGS
 * Fixed bug when using row highlighting feature.  The logic that accounts for row grouping was referring to the wrong index (insert.grp1)
 * Corrected location of row highlight
-
+* Adjusted background highlighting of column names
+* When a row group was too large to fit on one page, the newpage mechanism was not being triggred.  Modified function size.simp for correction.  May require addional attention for options or default presentation when this scneario occurs.
 dprint 0.0.3
 --------------
 
