@@ -43,8 +43,13 @@ function(tbl.obj, char.dim.obj, pagelayout, loc.y)
              tablebreak.dx <- fitspage.grp.dx[length(fitspage.grp.dx)];
              newpage=TRUE
             }
-          #else if (call2) {tablebreak.dx <- which(fitspage)[1]; newpage=TRUE}  #  After page is resetM, IF group is too, large break rule
-          else  {nothingfits <- TRUE} #  Reset page and see if group works
+          #else if (call2) {tablebreak.dx <- which(fitspage)[1]; newpage=TRUE}  
+          #  After page is resetM, IF group is too, large break rule
+          else  {tablebreak.dx <- which(fitspage)[length(which(fitspage))]
+                 # THese two options have different behaviors, not sure which should be the default, mayber antohe parameter
+                 #nothingfits <- TRUE
+                 newpage <- TRUE
+                 } #  Reset page and see if group works
         }
       else # Assume no group and fit rows to page
         {
