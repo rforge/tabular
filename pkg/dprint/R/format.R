@@ -60,3 +60,18 @@ function(cil, ciu, mn=NA, digits=2, nsmall=2, NAmiss=TRUE)
   f
 }
 
+#' Format Round
+#'
+#' Abreviation of rouding function
+#'
+#' @param x column name
+#' @param digits see format
+#' @param nsmall see format
+#' @param NAmiss present NA as white space
+#' @export
+Fr <- function(x, digits=2, nsmall=2, NAmiss=TRUE)
+{
+  f <- format(round(x,digits), digits=digits, nsmall=nsmall)
+  if (NAmiss) { f[is.na(x)] <- ""}
+  f
+}
