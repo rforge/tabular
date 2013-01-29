@@ -1,6 +1,7 @@
 export(Fb)
 export(Fc)
 export(Fci)
+export(Fr)
 export(char.dim)
 export(char.height)
 export(char.width)
