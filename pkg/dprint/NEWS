@@ -1,6 +1,8 @@
 
 dprint 0.0.4
 --------------
+NEW
+* Added 'Fr' function for simple rounding
 
 ASSUMPTIONS
 * When title is defined, and only one conditional variable is defined, just print the values concatenated to the text
