@@ -2,7 +2,7 @@ Package: dprint
 Type: Package
 Title: Print Tabular Data to Graphics Device
 Version: 0.0.4
-Date: 2012-08-28
+Date: 2014-12-12
 Author: Carlin Brickner
 Maintainer: Carlin Brickner <carlin.brickner.rpackage@gmail.com>
 Depends:
@@ -12,31 +12,3 @@ Description: This package provides a generalized method for printing tabular
     high quality tabular output seamless for the useR.
 License: GPL (>= 2)
 LazyLoad: yes
-Collate:
-    'conditional.struct.R'
-    'consect.struct.R'
-    'dborder.R'
-    'dprint.lm.R'
-    'dprint.R'
-    'dprint.simp.R'
-    'dprint.table.R'
-    'fitpage.R'
-    'ftr.R'
-    'hdr.R'
-    'insert.grp.R'
-    'kill.multiregx.R'
-    'list.to.df.R'
-    'pagelayout.R'
-    'row.hl.R'
-    'size.simp.R'
-    'tablebreak.R'
-    'tbl.struct.R'
-    'tbl.struct.simp.R'
-    'vector.linebreak.R'
-    'vector.struct.R'
-    'fmla_inter.R'
-    'format.R'
-    'simulate_descriptives.R'
-    'char_dim.R'
-    'style_sheet.R'
-    'colnames_struct.R'
