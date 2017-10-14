@@ -12,7 +12,9 @@ fmla_rhs(f, span, Rnl = list(Rn.o = list(), Rn.n = NULL, rn.i = 0),
 
 \item{span}{There are two types of calls, when TRUE returns the spanning text, does not when FALSE}
 
-\item{Rnl}{}
+\item{Rnl}{Rename}
+
+\item{byvars}{Condition on these variables}
 }
 \description{
 Parses Right hand side of formula

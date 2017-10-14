@@ -7,6 +7,8 @@
 kill.multiregx(string, regx)
 }
 \arguments{
+\item{string}{Input string which will have regular expressions removed}
+
 \item{regx}{Perl Regular expression}
 }
 \description{

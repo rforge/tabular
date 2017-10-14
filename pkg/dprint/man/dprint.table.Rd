@@ -78,7 +78,7 @@ table2a$group3 <- "Zebra"; table2b$group3 <- "Elephant";
 table3 <- rbind(table2a, table2b)
 # Create style object
 CBs <- style(frmt.bdy=frmt(fontfamily="HersheySans"), frmt.tbl=frmt(bty="o", lwd=1),
-            frmt.col=frmt(fontfamily="HersheySans", bg="khaki", fontface="bold", lwd=2, bty="_"),
+            frmt.col=frmt(fontfamily="HersheySans", bg="khaki",fontface="bold",lwd=2,bty="_"),
             frmt.grp=frmt(fontfamily="HersheySans",bg="khaki", fontface="bold"),
             frmt.main=frmt(fontfamily="HersheySans", fontface="bold", fontsize=12),
             frmt.ftn=frmt(fontfamily="HersheySans"),
@@ -88,13 +88,16 @@ CBs <- style(frmt.bdy=frmt(fontfamily="HersheySans"), frmt.tbl=frmt(bty="o", lwd
 dprint(~., data=table1f)
 dev.off()
 # dev.new() # Spanning,  group level, and apply control and treatments to hierchaies on right
-dprint(group+level~Control:(Mean1 + Median1 + Variance1) + Treatment:(Mean2 + Median2 + Variance2) + p.value, data=table1f)
+dprint(group+level~Control:(Mean1 + Median1 + Variance1) +
+ Treatment:(Mean2 + Median2 + Variance2) + p.value, data=table1f)
 dev.off()
 # dev.new(); #Illegal Names, remove expression
-dprint(group+level~`This is a Control`:(Mean1 + Median1 + Variance1) + Treatment.y:(Mean2 + Median2 + Variance2), table1f, regx="1|2|.y")
+dprint(group+level~`This is a Control`:(Mean1 + Median1 + Variance1) +
+ Treatment.y:(Mean2 + Median2 + Variance2), table1f, regx="1|2|.y")
 dev.off()
 # dev.new(); #Illegal Names, no group label
-dprint(~ `This is a Control`:(Mean1 + Median1 + Variance1) + Treatment.y:(Mean2 + Median2 + Variance2), table1f, regx="1|2|.y")
+dprint(~ `This is a Control`:(Mean1 + Median1 + Variance1) + 
+Treatment.y:(Mean2 + Median2 + Variance2), table1f, regx="1|2|.y")
 # dev.new(); # all on rhs with exception of p.value
 dev.off()
 dprint(group+level~.-p.value, table1f)
@@ -104,10 +107,12 @@ dev.off()
 dprint(fmla=group+level~., data=table1)
 dev.off()
 # dev.new()
-dprint(fmla=group+level~Rn(round(Mean1, 2), "Mean Trt")+Rn(round(Variance1,2), "Variance"), data=table1)
+dprint(fmla=group+level~Rn(round(Mean1, 2), "Mean Trt")+Rn(round(Variance1,2), "Variance"), 
+data=table1)
 dev.off()
 # dev.new()
-dprint(group+level~Rn(round(Mean1, 2), "Mean Trt")+Variance1+Rn(round(I((Mean1+Mean2)/2),2), "Average of Averages"), table1, main="Dumb Ass")
+dprint(group+level~Rn(round(Mean1, 2), "Mean Trt")+
+Variance1+Rn(round(I((Mean1+Mean2)/2),2), "Average of Averages"), table1, main="Dumb Ass")
 dev.off()
 # dev.new()
 dprint(level~.|group2, table2)
@@ -116,34 +121,45 @@ dev.off()
 dprint(level~Mean1+Median2|group2, table2, main="Descriptives")
 dev.off()
 # dev.new(); # Spanning, embedded fuctions, and conditional
-dprint(group+level~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)")|group2, table2)
+dprint(group+level~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"),
+ "Mean Trt (Std)")|group2, table2)
 dev.off()
 # dev.new(); # Spanning, embedded fuctions, and conditional
-dprint(~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)")|group2, table2)
+dprint(~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), 
+"Mean Trt (Std)")|group2, table2)
 # dev.new(); # Spanning, embedded fuctions, and conditional
 dev.off()
-dprint(~Treatment:(Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)")+Rn(round(Median1,2), "Median"))|group2, table2)
+dprint(~Treatment:(Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)")+
+Rn(round(Median1,2), "Median"))|group2, table2)
 dev.off()
 # dev.new()
-dprint(~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)")+Control:Rn(paste(round(Mean2, 2),"(", round(Variance2, 2),")"), "Mean Trt (Std)")|group2, table2)
+dprint(~Treatment:Rn(paste(round(Mean1, 2),"(", round(Variance1, 2),")"), "Mean Trt (Std)")+
+Control:Rn(paste(round(Mean2, 2),"(", round(Variance2, 2),")"), "Mean Trt (Std)")|group2,
+ table2)
 dev.off()
 
-f1 <- group+level~Treatment:Rn(Fc(Mean1, Variance1), "Mean (Std)")+Control:Rn(Fc(Mean2, Variance2), "Mean (Std)") + Rn(round(p.value,2), "P-value")
+f1 <- group+level~Treatment:Rn(Fc(Mean1, Variance1), "Mean (Std)")+
+Control:Rn(Fc(Mean2, Variance2), "Mean (Std)") + Rn(round(p.value,2), "P-value")
 # dev.new()
 dprint(fmla=f1, data=table1,margins=.2, main="Justify Center")
 dev.off()
 # dev.new()
-dprint(fmla=f1, data=table1,margins=.2, main="Justify Right", style=style(justify="right", frmt.tbl=frmt(bty="o")))
+dprint(fmla=f1, data=table1,margins=.2, main="Justify Right", 
+style=style(justify="right", frmt.tbl=frmt(bty="o")))
 dev.off()
 # dev.new()
-dprint(fmla=f1, data=table1,margins=.2, main="Justify Left",  style=style(justify="left", frmt.tbl=frmt(bty="o")))
+dprint(fmla=f1, data=table1,margins=.2, main="Justify Left", 
+style=style(justify="left", frmt.tbl=frmt(bty="o")))
 dev.off()
 
 h <- expression(hdr("Test Header", pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1, .5))))
-f <- expression(ftr("R Package tabulaR", pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1.25, 1, 1.25,1)), pagenum=eval.parent(pagenum, 1)))
+f <- expression(ftr("R Package tabulaR", 
+pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1.25, 1, 1.25,1)), 
+pagenum=eval.parent(pagenum, 1)))
 # dev.new()
 dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
-            style=style(justify="left", frmt.tbl=frmt(bty="o"), frmt.bdy=frmt(linespace=1.5, bty="X")),
+            style=style(justify="left", frmt.tbl=frmt(bty="o"), 
+            frmt.bdy=frmt(linespace=1.5, bty="X")),
             f.hdr = h, f.ftr=f, pagenum=1)
 dev.off()
 
@@ -158,12 +174,14 @@ by_var_f2 <- level~Mean1+Median1|group+group2
 dprint(fmla=by_var_f1, data=table2)
 dev.off()
 # dev.new()
-# WHen title is defined, and only one conditional variable is defined, just print the values concatenated to the text
+# When a title is defined, and only one conditional variable is defined, just print the values
+# concatenated to the text
 dprint(fmla=by_var_f1, data=table2,main=" ")
 dev.off()
 # dev.new()
-# When more than one conditional variable, concatenate the variable name and the current combination of values
-dprint(fmla=by_var_f2, data=table2,main="Descriptives for: ")             
+# When more than one conditional variable, concatenate the variable name and the
+# current combination of values
+#' dprint(fmla=by_var_f2, data=table2,main="Descriptives for: ")             
 }
 \author{
 Carlin Brickner

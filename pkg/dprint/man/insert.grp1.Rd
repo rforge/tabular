@@ -15,6 +15,8 @@ insert.grp1(obj, dx, lblescp, group = FALSE, val = NA, dx.up = FALSE)
 
 \item{group}{indicates that this object is related to the grouping vector and the insetions must go after}
 
+\item{val}{Values to be inserted}
+
 \item{dx.up}{Bolean, If true adjust an index}
 }
 \description{

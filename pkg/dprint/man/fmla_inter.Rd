@@ -4,7 +4,7 @@
 \alias{fmla_inter}
 \title{Formula Interface Describing the Structure of Tabular Data}
 \usage{
-fmla_inter(f, data = NULL, regx = NA, ...)
+fmla_inter(f, data = NULL, regx = NA)
 }
 \arguments{
 \item{f}{formula}

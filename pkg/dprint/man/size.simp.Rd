@@ -6,6 +6,15 @@
 \usage{
 size.simp(tbl.obj, char.dim.obj, pagelayout, loc.y)
 }
+\arguments{
+\item{tbl.obj}{Table Object}
+
+\item{char.dim.obj}{Size of character given formats}
+
+\item{pagelayout}{Page dimensions}
+
+\item{loc.y}{Y-coordinate reference}
+}
 \description{
 Measures size of properties of the simple table
 }

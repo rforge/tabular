@@ -41,12 +41,14 @@ f <- expression(ftr("R Package tabulaR",
 pdf("longtable1.pdf", height=8.5, width=11)
 
 
-  dp <- dprint(fmla= group+level~ `This is a Control`:(Mean1 + Variance1) + Treatment:(Mean2 + Variance2)+p.value,
+  dp <- dprint(fmla= group+level~ `This is a Control`:(Mean1 + Variance1) +
+   Treatment:(Mean2 + Variance2)+p.value,
          data=longtable1, showmargins=TRUE, dtype="landscape",
          newpage=TRUE, pagenum=1, margins=1,
          f.hdr=h, f.ftr=f
          )
-  dprint(fmla= group+level~ `This is a Control`:(Mean1 + Variance1) + Treatment:(Mean2 + Variance2)+p.value,
+  dprint(fmla= group+level~ `This is a Control`:(Mean1 + Variance1) + 
+  Treatment:(Mean2 + Variance2)+p.value,
          data=longtable2, showmargins=TRUE, dtype="landscape",
          newpage=TRUE, lastcall=dp, # Pick up with page numbering
          margins=1,
