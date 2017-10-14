@@ -49,8 +49,8 @@ function(f, grp=NULL, lvl=NULL, rhs.lpad=FALSE) {
 #'
 #' @param f formula
 #' @param span There are two types of calls, when TRUE returns the spanning text, does not when FALSE
-#' @param Rnl 
-#' @param byvars
+#' @param Rnl Rename
+#' @param byvars Condition on these variables
 #' @author Rocco Napoli
 #' @export
 fmla_rhs <-
@@ -134,11 +134,11 @@ function(f,
 #' @param f formula
 #' @param data data.frmae
 #' @param regx remove regular expression from column name
-#' @param ...
 #' @author Rocco Napoli
 #' @export
 fmla_inter <-
-function(f, data=NULL, regx=NA, ...) {
+function(f, data=NULL, regx=NA) {
+  # Removing ... from parameter, doesn't look like this is used at all 10/14/2017 cb
   level       <- NULL  # Character, name of column containing row labels
   group       <- NULL  # first level grouping
   byvars      <- NULL

@@ -2,10 +2,10 @@
 #'
 #' Measures size of properties of the simple table
 #'
-#' @param tbl.obj
-#' @param char.dim.obj
-#' @param pagelayout
-#' @param loc.y
+#' @param tbl.obj Table Object
+#' @param char.dim.obj Size of character given formats
+#' @param pagelayout Page dimensions
+#' @param loc.y Y-coordinate reference
 #' @export
 size.simp <-
 function(tbl.obj, char.dim.obj, pagelayout, loc.y)

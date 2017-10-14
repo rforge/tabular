@@ -10,7 +10,7 @@ rbin <-
 function(n.grp = 8, n.lvls = 5, n.grp2=NULL)
   {
     g  <- rep(LETTERS[1:n.grp], rep(n.lvls, n.grp))
-    if (!is.null(n.grp2)) {g2 <- rep(c(1:n.grp2), rep(ceil(length(g)/n.grp2), n.grp2))}
+    if (!is.null(n.grp2)) {g2 <- rep(c(1:n.grp2), rep(ceiling(length(g)/n.grp2), n.grp2))}
     f  <- rep(letters[(26-n.lvls+1):26], n.grp)
     f <- paste(f,f,f,f,f,f,f,f,f, sep="")
     r1 <- rpois((n.lvls*n.grp), 20)
@@ -40,7 +40,7 @@ rdesc <-
 function(n.grp = 8, n.lvls = 5, n.grp2=NULL, rnd=FALSE)
   {
     g  <- rep(LETTERS[1:n.grp], rep(n.lvls, n.grp))
-    if (!is.null(n.grp2)) {g2 <- rep(c(1:n.grp2), rep(ceil(length(g)/n.grp2), n.grp2))}
+    if (!is.null(n.grp2)) {g2 <- rep(c(1:n.grp2), rep(ceiling(length(g)/n.grp2), n.grp2))}
     f  <- rep(letters[(26-n.lvls+1):26], n.grp)
     f <- paste(f,f,f,f,f,f,f,f,f, sep="")
     mn1   <- rnorm((n.lvls*n.grp), 2.3, 1.1)

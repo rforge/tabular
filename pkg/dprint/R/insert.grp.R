@@ -6,7 +6,7 @@
 #' @param dx Index where NA is to be inserted
 #' @param lblescp Label Escape, boolean
 #' @param group indicates that this object is related to the grouping vector and the insetions must go after
-#' @param val
+#' @param val Values to be inserted
 #' @param dx.up Bolean, If true adjust an index
 #' @export
 insert.grp1 <-
@@ -14,7 +14,7 @@ function(obj,      # vector or data frame
           dx,         # Index where NA is to be inserted
           lblescp,    # Label Escape, boolean
           group=FALSE,  # indicates that this object is related to the grouping vector and the insetions must go after
-          val=NA,
+          val=NA,      
           dx.up =FALSE # If true adjust an index
 )
 {
@@ -81,7 +81,7 @@ function(obj,      # vector or data frame
 #'
 #' Dispatcher for insert.grp1. Inserts NA positions for tbl, label, and group structure from tbl.obj.
 #'
-#' @param tbl.obj
+#' @param tbl.obj Table Object
 #' @export
 insert.grp <-
 function(tbl.obj)
