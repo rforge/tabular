@@ -9,7 +9,8 @@ Depends:
     R (>= 3.0)
 Imports: 
 	grid, 
-	stats
+	stats,
+	grDevices
 Description: This package provides a generalized method for printing tabular
     data within the R environment in order to make the process of presenting
     high quality tabular output seamless for the useR.
