@@ -3,9 +3,9 @@
 #' Parses Left hand side of formula
 #'
 #' @param f formula
-#' @param grp
-#' @param lvl
-#' @param rhs.lpad
+#' @param grp character, name of variable which groups rows together
+#' @param lvl character, name of variable which labels each row
+#' @param rhs.lpad boolean, right pad 
 #' @author Rocco Napoli
 #' @export
 fmla_lhs <-

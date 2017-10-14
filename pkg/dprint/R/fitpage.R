@@ -2,11 +2,11 @@
 #'
 #' Calcuates character expansion to apply accross table presentation so that table fits within margins
 #'
-#' @param size.simp
-#' @param pagelayout
-#' @param fit.width
-#' @param fit.height
-#' @param fit
+#' @param size.simp size object
+#' @param pagelayout dimensions of page
+#' @param fit.width boolean, force to fit to width
+#' @param fit.height boolean, force to fit height
+#' @param fit boolean, force to fit minimum of height and wdith
 #' @param cex.0 default cex
 #' @export
 fitpage <-

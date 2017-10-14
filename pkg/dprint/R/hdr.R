@@ -2,11 +2,11 @@
 #'
 #' Header
 #'
-#' @param txt1
-#' @param frmt1
-#' @param txt2
-#' @param frmt2
-#' @param pagelayout.obj
+#' @param txt1 Text 1
+#' @param frmt1 Format 1
+#' @param txt2 Text 2
+#' @param frmt2 Format 2
+#' @param pagelayout.obj Layout Object
 #' @export
 hdr <-
 function(txt1,

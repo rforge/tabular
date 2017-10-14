@@ -4,7 +4,7 @@
 #' 
 #' @param vctr vector
 #' @param frmt format object
-#' @param cx shinkage parameter
+#' @param cx shrinkage parameter
 #' @export
 char.width1 <-
 function(vctr, frmt, cx=1)
@@ -16,7 +16,7 @@ function(vctr, frmt, cx=1)
    cwidth.n <- max(n.char, na.rm=T)
    max.dx   <- which.max(cwidth.n)
 
-   cwidth.u <- max(unlist(lapply(vctr,FUN=function(x) {convertWidth(grobWidth(textGrob(x, gp=gpar(fontfamily = frmt$fontfamily,
+   cwidth.u <- max(unlist(lapply(vctr,FUN=function(x) {convertUnit(grobWidth(textGrob(x, gp=gpar(fontfamily = frmt$fontfamily,
                                                                      fontsize = frmt$fontsize,
                                                                      fontface = frmt$fontface,
                                                                      cex = cx
@@ -69,7 +69,7 @@ char.height <-
 function(charact = "A", frmt, cx=1)
 {
 
-  cheight.u <- convertHeight(grobHeight(textGrob(charact, gp=gpar(fontfamily = frmt$fontfamily,
+  cheight.u <- convertUnit(grobHeight(textGrob(charact, gp=gpar(fontfamily = frmt$fontfamily,
                                                                   fontsize = frmt$fontsize,
                                                                   fontface = frmt$fontface,
                                                                   cex = cx

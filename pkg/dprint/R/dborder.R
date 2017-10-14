@@ -2,9 +2,9 @@
 #'
 #' Draws a border style arround a section of table
 #' 
-#' @param cord1
-#' @param cord2
-#' @param frmt
+#' @param cord1 Vector (x,y) indicating position of top left point of rectangle
+#' @param cord2 Vector (x,y) indicating position of bottom right point of rectangle
+#' @param frmt Format
 #' @export
 dborder <-
 function(cord1,  # Vector (x,y) indicating position of top left point of rectangle
