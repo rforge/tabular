@@ -2,12 +2,14 @@
 #'
 #' drpint method (to be implemented)
 #' 
-#' @param ... see dprint.table
+#' @param data Input data.frame of class "data.frame"
+#' @param ... see \code{\link{dprint.data.frame}}
 #' @export
-#' @seealso For now  see \code{\link{dprint.table}}
 #' 
 #' @author Carlin Brickner
 dprint <-
-function(...)
-  { dprint.table(...)}
+function(data, ...)
+{ UseMethod("dprint", data)
+  #dprint.data.frame(...)
+  }
 
