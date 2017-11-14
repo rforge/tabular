@@ -4,16 +4,15 @@
 \alias{dprint}
 \title{Print Table to Graphics Device (dprint)}
 \usage{
-dprint(...)
+dprint(data, ...)
 }
 \arguments{
-\item{...}{see dprint.table}
+\item{data}{Input data.frame of class "data.frame"}
+
+\item{...}{see \code{\link{dprint.data.frame}}}
 }
 \description{
 drpint method (to be implemented)
-}
-\seealso{
-For now  see \code{\link{dprint.table}}
 }
 \author{
 Carlin Brickner
