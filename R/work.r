@@ -120,7 +120,7 @@ dprint(fmla=group+level~., data=table1)
 x11()
 dprint(fmla=group+level~Rn(round(Mean1, 2), "Mean Trt")+Rn(round(Variance1,2), "Variance"), data=table1)
 x11()
-dprint(group+level~Rn(round(Mean1, 2), "Mean Trt")+Variance1+Rn(round(I((Mean1+Mean2)/2),2), "Average of Averages"), table1, main="Dumb Ass")
+dprint(group+level~Rn(Fr(Mean1, 2), "Mean Trt")+Variance1+Rn(round(I((Mean1+Mean2)/2),2), "Average of Averages"), data=table1, main="Don't Do this")
 x11()
 dprint(level~.|group2, table2)
 x11();
