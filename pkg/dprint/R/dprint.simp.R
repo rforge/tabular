@@ -8,7 +8,7 @@
 #' @param char.dim.obj character dimension object
 #' @param size.simp.obj size of text object passed to grid
 #' @export
-dprint.simp <-
+dprint_simp <-
 function(tbl.obj,          # Simple Table object
                         init = c(0, 6.9), # Starting Position of Table
                         style,
