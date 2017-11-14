@@ -7,7 +7,7 @@ Author: Carlin Brickner
 Maintainer: Carlin Brickner <carlin.brickner.rpackage@gmail.com>
 Depends:
     R (>= 3.0)
-Imports: 
+Imports:
 	grid, 
 	stats,
 	grDevices
@@ -17,3 +17,4 @@ Description: This package provides a generalized method for printing tabular
 License: GPL (>= 2)
 LazyLoad: yes
 RoxygenNote: 6.0.1
+Suggests: testthat
