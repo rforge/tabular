@@ -1,4 +1,12 @@
 
+dprint 0.0.5
+--------------
+NEW
+* Working on turning 'dprint' into S3 method
+* Renamed dprint.table to dprint.data.frame
+* Updatd to > R3.0 and depriciated functions in referenced packages
+
+
 dprint 0.0.4
 --------------
 NEW
@@ -9,7 +17,6 @@ ASSUMPTIONS
 * When more than one conditional variable, concatenate the variable name and the current combination of values (same as before)
 
 BUGS
-* Updating to > R3.0 and depriciated functions in referenced packages
 * Fixed bug when using row highlighting feature.  The logic that accounts for row grouping was referring to the wrong index (insert.grp1)
 * Corrected location of row highlight
 * Adjusted background highlighting of column names
