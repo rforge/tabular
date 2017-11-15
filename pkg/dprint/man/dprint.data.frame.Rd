@@ -17,11 +17,11 @@
 
 \item{fmla}{an object of class "formula". Formula interface to define table structure. See fmla function}
 
-\item{label}{name of column containing row labels}
+\item{label}{Instead of using fmla, the name of column containing row labels}
 
-\item{group}{name of column containing hieriarchy labels for the row names}
+\item{group}{Instead of using fmla,name of column containing hieriarchy labels for the row names}
 
-\item{regx}{regular expression to be removed from original column names}
+\item{regx}{regular expression used to remove unwanted text displayed from original column names (e.g. merge applied with .x and .y appended to duplicate column nammes)}
 
 \item{style}{style sheet object.  See style function}
 
@@ -31,7 +31,7 @@
 
 \item{dtype}{Graphics device type referred to by names, sets default page settings.Device type, currently available "rdevice", "portrait", "landscape"}
 
-\item{pg.dim}{If custom page dimensions define a vector of c(width, height) units. Custom page dimensions over ride dtype.  When printing to a multiple page pdf with custom dimensions, dtype should be set to some character other than "redevice" (i.e. "custom") because dev.new() will be used to start a new window instead of grid.text()}
+\item{pg.dim}{If custom page dimensions define a vector of c(height,width) units. Custom page dimensions over ride dtype.  When printing to a multiple page pdf with custom dimensions, dtype should be set to some character other than "redevice" (i.e. "custom") because dev.new() will be used to start a new window instead of grid.text()}
 
 \item{margins}{A numerical vector of the form c(bottom, left, top, right) which gives the margin size specified in inches. Other forms include a constant for all margins and c(top/bottom,left/right)}
 
@@ -59,7 +59,7 @@
 
 \item{pagenum}{Starting page number, will override pagenumber from lastcall}
 
-\item{lastcall}{Last call from dprint}
+\item{lastcall}{Object returned from last call from dprint.  Can use this as reference for a second table presented on the same device as a pervious.  dprint continues printing to device with fixed separation between tables}
 }
 \description{
 Print Table to Graphics Device. 

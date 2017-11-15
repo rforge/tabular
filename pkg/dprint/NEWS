@@ -5,7 +5,7 @@ NEW
 * Working on turning 'dprint' into S3 method
 * Renamed dprint.table to dprint.data.frame
 * Updatd to > R3.0 and depriciated functions in referenced packages
-
+* pg.dim parameter is now c(height,width) instead of c(width, height), to allign with points to rows of a data.frame and columns respectively
 
 dprint 0.0.4
 --------------

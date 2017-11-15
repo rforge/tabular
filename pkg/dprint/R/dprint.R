@@ -1,19 +1,17 @@
 #' Print Table to Graphics Device (dprint)
 #'
-#' Print Table to Graphics Device. 
-#' Manages page layout and prints multiple tables by dispatching dprint_simp
-#' (shold probably be a data.frame class of dprint)
+#' Print table structure, currently provided as an input data frame, to the Graphics Device. Specification of the layout of the table is done through a formula interface. In addition, formula interface allows user to apply inline custom formats, renaming, and any mathematical expressions supported by model.matrix
 #' 
 #' @param fmla an object of class "formula". Formula interface to define table structure. See fmla function
 #' @param data Input data.frame of class "data.frame"
-#' @param label name of column containing row labels
-#' @param group name of column containing hieriarchy labels for the row names
-#' @param regx regular expression to be removed from original column names
+#' @param label Instead of using fmla, the name of column containing row labels
+#' @param group Instead of using fmla,name of column containing hieriarchy labels for the row names
+#' @param regx regular expression used to remove unwanted text displayed from original column names (e.g. merge applied with .x and .y appended to duplicate column nammes)
 #' @param style style sheet object.  See style function
 #' @param main table title
 #' @param footnote footnote
 #' @param dtype Graphics device type referred to by names, sets default page settings.Device type, currently available "rdevice", "portrait", "landscape"
-#' @param pg.dim If custom page dimensions define a vector of c(width, height) units. Custom page dimensions over ride dtype.  When printing to a multiple page pdf with custom dimensions, dtype should be set to some character other than "redevice" (i.e. "custom") because dev.new() will be used to start a new window instead of grid.text()
+#' @param pg.dim If custom page dimensions define a vector of c(height,width) units. Custom page dimensions over ride dtype.  When printing to a multiple page pdf with custom dimensions, dtype should be set to some character other than "redevice" (i.e. "custom") because dev.new() will be used to start a new window instead of grid.text()
 #' @param margins A numerical vector of the form c(bottom, left, top, right) which gives the margin size specified in inches. Other forms include a constant for all margins and c(top/bottom,left/right)
 #' @param showmargins Display margins on page in red. Usefull for tinkering with presentation
 #' @param row.hl row hightlight object. Conditional highlight; row.hl(dx=, col=)
@@ -27,7 +25,8 @@
 #' @param f.hdr Pass Function for printing header
 #' @param f.ftr Pass Function for printing Footer
 #' @param pagenum Starting page number, will override pagenumber from lastcall
-#' @param lastcall Last call from dprint
+#' @param lastcall Object returned from last call from dprint.  Can use this as reference for a second table presented on the same device as a pervious.  dprint continues printing to device with fixed separation between tables 
+#' @author Carlin Brickner
 #' @export
 #' @examples
 #' ### Generate Sample Data Structures ###
@@ -146,7 +145,6 @@
 #' # When more than one conditional variable, concatenate the variable name and the
 #' # current combination of values
 #' #' dprint(fmla=by_var_f2, data=table2,main="Descriptives for: ")             
-#' @author Carlin Brickner
 dprint <-
   function(data,              # Input Data.frame
            fmla=NULL,         # Formula interface to define table structure
