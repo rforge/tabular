@@ -157,7 +157,7 @@ function(data,              # Input Data.frame
          main=NA,           # Table Title, Vector of Strings
          footnote=NA,       # Footnote, Vector of Strings
          dtype="rgraphics", # Device type, currently available "rdevice", "portrait", "landscape"
-         pg.dim=NULL,       # If custom page dimensions define a vector of c(width, height) units. Custom page dimensions over ride dtype
+         pg.dim=NULL,       # If custom page dimensions define a vector of c(height, width) units. Custom page dimensions over ride dtype
          margins=NULL,      # A numerical vector of the form c(bottom, left, top, right) which gives the margin size specified in inches.
          showmargins=FALSE, # Display margins on page in red
          row.hl=NULL,       # Conditional highlight; row.hl(dx=, col=)
