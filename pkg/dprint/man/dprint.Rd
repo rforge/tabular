@@ -12,13 +12,13 @@ dprint(data, fmla = NULL, label = NULL, group = NULL, regx = NA,
   f.hdr = NULL, f.ftr = NULL, pagenum = NULL, lastcall = NULL)
 }
 \arguments{
-\item{data}{Input data.frame of class "data.frame"}
+\item{data}{input data.frame of class "data.frame"}
 
 \item{fmla}{an object of class "formula". Formula interface to define table structure. See fmla function}
 
-\item{label}{Instead of using fmla, the name of column containing row labels}
+\item{label}{instead of using fmla, the name of column containing row labels}
 
-\item{group}{Instead of using fmla,name of column containing hieriarchy labels for the row names}
+\item{group}{instead of using fmla,name of column containing hieriarchy labels for the row names}
 
 \item{regx}{regular expression used to remove unwanted text displayed from original column names (e.g. merge applied with .x and .y appended to duplicate column nammes)}
 
@@ -30,7 +30,7 @@ dprint(data, fmla = NULL, label = NULL, group = NULL, regx = NA,
 
 \item{dtype}{Graphics device type referred to by names, sets default page settings.Device type, currently available "rdevice", "portrait", "landscape"}
 
-\item{pg.dim}{If custom page dimensions define a vector of c(height,width) units. Custom page dimensions over ride dtype.  When printing to a multiple page pdf with custom dimensions, dtype should be set to some character other than "redevice" (i.e. "custom") because dev.new() will be used to start a new window instead of grid.text()}
+\item{pg.dim}{a vector of c(height,width) units used to describe the dimensinos of a custom page and  over ride dtype.  When printing to a multiple page pdf with custom dimensions, dtype should be set to some character other than "redevice" (i.e. "custom") because dev.new() will be used to start a new window instead of grid.text()}
 
 \item{margins}{A numerical vector of the form c(bottom, left, top, right) which gives the margin size specified in inches. Other forms include a constant for all margins and c(top/bottom,left/right)}
 
@@ -52,13 +52,13 @@ dprint(data, fmla = NULL, label = NULL, group = NULL, regx = NA,
 
 \item{center}{boolean, Center both vertically and horizontally. These should probably not be used with the fit.* parameters}
 
-\item{f.hdr}{Pass Function for printing header}
+\item{f.hdr}{pass Function for printing header}
 
-\item{f.ftr}{Pass Function for printing Footer}
+\item{f.ftr}{pass Function for printing Footer}
 
-\item{pagenum}{Starting page number, will override pagenumber from lastcall}
+\item{pagenum}{starting page number, will override pagenumber from lastcall}
 
-\item{lastcall}{Object returned from last call from dprint.  Can use this as reference for a second table presented on the same device as a pervious.  dprint continues printing to device with fixed separation between tables}
+\item{lastcall}{object returned from last call from dprint.  Can use this as reference for a second table presented on the same device as a pervious.  dprint continues printing to device with fixed separation between tables}
 }
 \description{
 Print table structure, currently provided as an input data frame, to the Graphics Device. Specification of the layout of the table is done through a formula interface. In addition, formula interface allows user to apply inline custom formats, renaming, and any mathematical expressions supported by model.matrix
@@ -150,32 +150,34 @@ dprint(fmla=f1, data=table1,margins=.2, main="Justify Left",
 style=style(justify="left", frmt.tbl=frmt(bty="o")))
 dev.off()
 
-h <- expression(hdr("Test Header", pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1, .5))))
-f <- expression(ftr("R Package tabulaR", 
-pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1.25, 1, 1.25,1)), 
-pagenum=eval.parent(pagenum, 1)))
+# Not Run:
+# h <- expression(hdr("Test Header", 
+# pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1, .5))))
+# f <- expression(ftr("R Package tabulaR", 
+# pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1.25, 1, 1.25,1)), 
+# pagenum=eval.parent(pagenum, 1)))
 # dev.new()
-dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
-            style=style(justify="left", frmt.tbl=frmt(bty="o"), 
-            frmt.bdy=frmt(linespace=1.5, bty="X")),
-            f.hdr = h, f.ftr=f, pagenum=1)
-dev.off()
+# dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
+#            style=style(justify="left", frmt.tbl=frmt(bty="o"), 
+#            frmt.bdy=frmt(linespace=1.5, bty="X")),
+#            f.hdr = h, f.ftr=f, pagenum=1)
+# dev.off()
 
 # dev.new()
-dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
-            style=CBs,
-            f.hdr = h, f.ftr=f, pagenum=1)
+# dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
+#            style=CBs,
+#            f.hdr = h, f.ftr=f, pagenum=1)
 # dev.new()
-by_var_f1 <- level~Mean1+Median1|group
-by_var_f2 <- level~Mean1+Median1|group+group2
+# by_var_f1 <- level~Mean1+Median1|group
+# by_var_f2 <- level~Mean1+Median1|group+group2
 # If main is default (null) than do not print titles
-dprint(fmla=by_var_f1, data=table2)
-dev.off()
+# dprint(fmla=by_var_f1, data=table2)
+# dev.off()
 # dev.new()
 # When a title is defined, and only one conditional variable is defined, just print the values
 # concatenated to the text
-dprint(fmla=by_var_f1, data=table2,main=" ")
-dev.off()
+# dprint(fmla=by_var_f1, data=table2,main=" ")
+# dev.off()
 # dev.new()
 # When more than one conditional variable, concatenate the variable name and the
 # current combination of values
