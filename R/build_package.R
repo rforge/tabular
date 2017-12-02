@@ -13,7 +13,7 @@ has_devel()
 show_news("dprint")
 load_all("dprint")
 
-#run_examples("dprint")
+#run_examples("dprint") 
 check("dprint")
 check_man("dprint")
 
