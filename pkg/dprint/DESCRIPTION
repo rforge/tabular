@@ -14,8 +14,8 @@ Imports:
 Description: Provides a generalized method for printing tabular data within 
 	the R environment in order to make the process of presenting high quality 
 	tabular output seamless for the user.  Output is directed to the R graphics 
-	device so that tables can be output to any file format supported by the 
-	graphics device and can be imbedded in any LaTeX or markdown document.  
+	device so that tables can be exported to any file format supported by the 
+	graphics device, which can be imbedded in any typesetting or markdown document.  
 	Utilizes a formula interface to specify the contents of tables found in 
 	manuscripts or business reports.  In addition, formula interface provides 
 	inline formatting of the numeric cells of a table and renaming column labels.
