@@ -33,6 +33,7 @@
 #' @examples
 #' ### Generate Sample Data Structures ###
 #' # Generate some example data frames
+#' \dontrun{
 #' table1   <- rdesc(4, 5)        # Numeric
 #' table1f <- rdesc(4, 5, rnd=TRUE) # Rounded and pretty format so values are character
 #' table1a <- table1; table1b<-table1;
@@ -116,6 +117,7 @@
 #' dprint(fmla=f1, data=table1,margins=.2, main="Justify Left", 
 #' style=style(justify="left", frmt.tbl=frmt(bty="o")))
 #' dev.off()
+#' }
 #'
 #' # Not Run:
 #' # h <- expression(hdr("Test Header", 

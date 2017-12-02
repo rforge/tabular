@@ -73,6 +73,7 @@
 #' dprint(fmla=group+level~Rn(round(Mean1, 2), "Mean Trt")+Rn(round(Variance1,2), "Variance"), 
 #' data=table1)
 #' dev.off()
+#' \dontrun{
 #' # dev.new()
 #' dprint(group+level~Rn(round(Mean1, 2), "Mean Trt")+
 #' Variance1+Rn(round(I((Mean1+Mean2)/2),2), "Average of Averages"), data=table1, main="Don't Do this")
@@ -127,6 +128,7 @@
 #' #            frmt.bdy=frmt(linespace=1.5, bty="X")),
 #' #            f.hdr = h, f.ftr=f, pagenum=1)
 #' # dev.off()
+#' }
 #'
 #' # dev.new()
 #' # dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
