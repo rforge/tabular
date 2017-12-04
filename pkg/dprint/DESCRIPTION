@@ -2,7 +2,7 @@ Package: dprint
 Type: Package
 Title: Print Tabular Data to Graphics Device
 Version: 0.0.4
-Date: 2017-12-01
+Date: 2017-12-03
 Author: Carlin Brickner
 Maintainer: Carlin Brickner <carlin.brickner.rpackage@gmail.com>
 Depends:
