@@ -116,39 +116,38 @@
 #' style=style(justify="left", frmt.tbl=frmt(bty="o")))
 #' dev.off()
 #'
-#' # Not Run:
-#' # h <- expression(hdr("Test Header", 
-#' # pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1, .5))))
-#' # f <- expression(ftr("R Package tabulaR", 
-#' # pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1.25, 1, 1.25,1)), 
-#' # pagenum=eval.parent(pagenum, 1)))
-#' # dev.new()
-#' # dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
-#' #            style=style(justify="left", frmt.tbl=frmt(bty="o"), 
-#' #            frmt.bdy=frmt(linespace=1.5, bty="X")),
-#' #            f.hdr = h, f.ftr=f, pagenum=1)
-#' # dev.off()
-#' }
+#'  h <- expression(hdr("Test Header", 
+#'  pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1, .5))))
+#'  f <- expression(ftr("R Package tabulaR", 
+#'  pagelayout.obj=pagelayout(dtype="rgraphics", margins=c(1.25, 1, 1.25,1)), 
+#'  pagenum=eval.parent(pagenum, 1)))
+#'  dev.new()
+#'  dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
+#'             style=style(justify="left", frmt.tbl=frmt(bty="o"), 
+#'             frmt.bdy=frmt(linespace=1.5, bty="X")),
+#'             f.hdr = h, f.ftr=f, pagenum=1)
+#'  dev.off()
 #'
-#' # dev.new()
-#' # dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
-#' #            style=CBs,
-#' #            f.hdr = h, f.ftr=f, pagenum=1)
-#' # dev.new()
-#' # by_var_f1 <- level~Mean1+Median1|group
-#' # by_var_f2 <- level~Mean1+Median1|group+group2
-#' # If main is default (null) than do not print titles
-#' # dprint(fmla=by_var_f1, data=table2)
-#' # dev.off()
-#' # dev.new()
+#'  dev.new()
+#'  dprint(fmla=f1, data=table1,margins=c(1.25, 1, 1.25,1), showmargins=TRUE, main="Table Left",
+#'             style=CBs,
+#'             f.hdr = h, f.ftr=f, pagenum=1)
+#'  dev.new()
+#'  by_var_f1 <- level~Mean1+Median1|group
+#'  by_var_f2 <- level~Mean1+Median1|group+group2
+#'  # If main is default (null) than do not print titles
+#'  dprint(fmla=by_var_f1, data=table2)
+#'  dev.off()
+#'  dev.new()
 #' # When a title is defined, and only one conditional variable is defined, just print the values
 #' # concatenated to the text
-#' # dprint(fmla=by_var_f1, data=table2,main=" ")
-#' # dev.off()
+#'  dprint(fmla=by_var_f1, data=table2,main=" ")
+#'  dev.off()
 #' # dev.new()
 #' # When more than one conditional variable, concatenate the variable name and the
 #' # current combination of values
-#' #' dprint(fmla=by_var_f2, data=table2,main="Descriptives for: ")             
+#' ' dprint(fmla=by_var_f2, data=table2,main="Descriptives for: ")  
+#' }           
 dprint <-
   function(data,              # Input Data.frame
            fmla=NULL,         # Formula interface to define table structure
