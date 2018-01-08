@@ -2,7 +2,7 @@ Package: dprint
 Type: Package
 Title: Print Tabular Data to Graphics Device
 Version: 0.0.4
-Date: 2017-12-03
+Date: 2017-12-15
 Author: Carlin Brickner, Rocco Napoli
 Maintainer: Carlin Brickner <carlin.brickner.rpackage@gmail.com>
 Depends:
@@ -16,7 +16,7 @@ Description: Provides a generalized method for printing tabular data within
 	tabular output seamless for the user.  Output is directed to the R graphics 
 	device so that tables can be exported to any file format supported by the 
 	graphics device. Utilizes a formula interface to specify the contents of 
-	tables found in manuscripts or business reports.  In addition, formula 
+	tables often found in manuscripts or business reports.  In addition, formula 
 	interface provides inline formatting of the numeric cells of a table and 
 	renaming column labels.
 License: GPL (>= 2)
