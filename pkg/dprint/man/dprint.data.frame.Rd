@@ -67,6 +67,20 @@ Prints tabular data to the graphics device by translating an R object to a tabul
 \details{
 The available method functions for dprint are given by methods(dprint).  
 
+dprint was largely developed for outputting tabular data directly to the PDF graphics
+device (see \code{\link{pdf}}), although it can be sent to any R graphics device or integrated 
+with Sweave, Rmarkdown, etc.  Using \code{\link{dprint}} still requires some trial and error approach 
+to achieve a desired presentation.
+ 
+The tabular results will be printed in the same order in which it occurs within the 
+data.frame.  When the \emph{label} parameter is used alone, it simply forces that vector to 
+the first column of the table and suppresses the column name.  It is most commonly paired 
+with the \emph{group} parameter.  The label column are levels that are nested within the group 
+column.  For group labels that span sequential rows, only one will be printed, for which
+an additional line break is forced and bold font is applied to group label to emphasize 
+this attribute of the label.  The input data.frame is often sorted by the group and label 
+column to leverage this functionality. 
+  
 \strong{Formula Interface: Operator Definitions}
 
 \itemize{
