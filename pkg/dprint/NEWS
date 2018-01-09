@@ -1,6 +1,11 @@
 
 dprint 0.0.5
 --------------
+* Improved documentation
+
+
+dprint 0.0.4
+--------------
 NEW
 * 'dprint' is now S3 generic function
 * Renamed dprint.table to dprint.data.frame to be S3 method of dprint

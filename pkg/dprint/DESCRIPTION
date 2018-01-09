@@ -1,8 +1,8 @@
 Package: dprint
 Type: Package
 Title: Print Tabular Data to Graphics Device
-Version: 0.0.4
-Date: 2018-01-08
+Version: 0.0.5
+Date: 2018-01-09
 Author: Carlin Brickner, Rocco Napoli
 Maintainer: Carlin Brickner <carlin.brickner.rpackage@gmail.com>
 Depends:
@@ -18,7 +18,7 @@ Description: Provides a generalized method for printing tabular data within
 	graphics device. Utilizes a formula interface to specify the contents of 
 	tables often found in manuscripts or business reports.  In addition, formula 
 	interface provides inline formatting of the numeric cells of a table and 
-	renaming column labels.
+	column naming attributes.
 License: GPL (>= 2)
 LazyLoad: yes
 RoxygenNote: 6.0.1
